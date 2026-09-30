@@ -154,112 +154,68 @@ function showHome() {
                 <strong>Budžet</strong>
                 <small>Troškovi putovanja</small>
             </button>
-
-            // -----------------------
+// --------------------
 // HARRY POTTER
-// -----------------------
+// --------------------
 
 function showHarryPotter() {
 
-    const container = document.querySelector(".container");
+const container = document.querySelector(".container");
 
-    let html = `
-        <div class="page-header">
-            <button class="back-button" onclick="showHome()">← Početna</button>
-            <h2>⚡ Harry Potter</h2>
-            <p>London • Harry Potter lokacije</p>
-        </div>
+let html = `
+<div class="page-header">
+<button class="back-button" onclick="showHome()">← Početna</button>
+<h2>⚡ Harry Potter</h2>
+<p>London • Harry Potter lokacije</p>
+</div>
 
-        <section class="day-card">
+<section class="day-card">
 
-            <div class="place">
-                <div class="place-icon">🚂</div>
-                <div class="place-info">
-                    <strong>Platform 9¾</strong>
-                    <p>King's Cross Station</p>
-                    <p>Obavezna fotka na Platformi 9¾. 🧙‍♂️</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Platform 9 3/4 Kings Cross Station, London')">
-                    📍
-                </button>
-            </div>
+<div class="place">
+<div class="place-icon">🚂</div>
+<div class="place-info">
+<strong>Platform 9¾</strong>
+<p>King's Cross Station</p>
+<p>Obavezna fotografija na platformi 9¾ 📸</p>
+</div>
+<button class="map-button" onclick="openMaps('Platform 9 3/4 Kings Cross Station, London')">
+📍
+</button>
+</div>
 
-            <div class="place">
-                <div class="place-icon">🏛️</div>
-                <div class="place-info">
-                    <strong>Leadenhall Market</strong>
-                    <p>City of London</p>
-                    <p>Lokacija korištena za Diagon Alley.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Leadenhall Market, London')">
-                    📍
-                </button>
-            </div>
+<div class="place">
+<div class="place-icon">🌉</div>
+<div class="place-info">
+<strong>Millennium Bridge</strong>
+<p>Harry Potter i Princ miješane krvi</p>
+</div>
+<button class="map-button" onclick="openMaps('Millennium Bridge London')">
+📍
+</button>
+</div>
 
-            <div class="place">
-                <div class="place-icon">🌉</div>
-                <div class="place-info">
-                    <strong>Millennium Bridge</strong>
-                    <p>Thames • St Paul's</p>
-                    <p>Poznati most iz Harry Pottera i Princa miješane krvi.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Millennium Bridge, London')">
-                    📍
-                </button>
-            </div>
+<div class="place">
+<div class="place-icon">🏰</div>
+<div class="place-info">
+<strong>Leadenhall Market</strong>
+<p>Lokacija iz Harry Pottera</p>
+</div>
+<button class="map-button" onclick="openMaps('Leadenhall Market London')">
+📍
+</button>
+</div>
 
-            <div class="place">
-                <div class="place-icon">🎬</div>
-                <div class="place-info">
-                    <strong>Warner Bros. Studio Tour</strong>
-                    <p>Harry Potter Studios</p>
-                    <p>Velika Harry Potter atrakcija izvan centra Londona.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Warner Bros Studio Tour London')">
-                    📍
-                </button>
-            </div>
+</section>
+`;
 
-        </section>
+container.innerHTML = html;
 
-        <section class="day-card">
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 
-            <div class="place">
-                <div class="place-icon">⭐</div>
-                <div class="place-info">
-                    <strong>Prioritet</strong>
-                    <p>Platform 9¾ je obavezna.</p>
-                    <p>Leadenhall Market i Millennium Bridge možemo spojiti s obilaskom Cityja.</p>
-                </div>
-            </div>
-
-        </section>
-    `;
-
-    container.innerHTML = html;
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
 }
-            <button class="menu-card" onclick="showNotes()">
-                <span>📝</span>
-                <strong>Bilješke</strong>
-                <small>Naše bilješke</small>
-            </button>
-
-        </section>
-    `;
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-
 // -------------------------
 // PLAN PUTA
 // -------------------------
