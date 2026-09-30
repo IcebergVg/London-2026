@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #101114;
+    --card: #1b1d22;
+    --card-hover: #24272e;
+    --text: #f5f5f5;
+    --muted: #a8abb2;
+    --accent: #d71920;
+    --border: #30333a;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px 18px;
+    background: #17191e;
+    border-bottom: 1px solid var(--border);
+}
+
+.flag {
+    font-size: 42px;
+}
+
+.app-header h1 {
+    font-size: 25px;
+    margin-bottom: 4px;
+}
+
+.app-header p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 18px;
+}
+
+.welcome {
+    background: linear-gradient(135deg, #202329, #17191e);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.welcome h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    color: var(--muted);
+    line-height: 1.55;
+    font-size: 15px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.menu-card {
+    min-height: 125px;
+    padding: 18px 14px;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    background: var(--card);
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.menu-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-2px);
+}
+
+.menu-card span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.menu-card strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.menu-card small {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+footer {
+    text-align: center;
+    color: #777b84;
+    font-size: 12px;
+    padding: 30px 15px;
+}
+
+@media (max-width: 430px) {
+
+    .container {
+        padding: 14px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu-card {
+        min-height: 120px;
+        padding: 15px 12px;
+    }
+
+    .app-header {
+        padding: 16px 14px;
+    }
+
+    .flag {
+        font-size: 36px;
+    }
+
+    .app-header h1 {
+        font-size: 22px;
+    }
+}
