@@ -498,9 +498,18 @@ function showRecords() {
 // BUDŽET
 // -----------------------
 
+// -----------------------
+// BUDŽET
+// -----------------------
+
 function showBudget() {
 
     const container = document.querySelector(".container");
+
+    const budget = JSON.parse(
+        localStorage.getItem("londonBudget") ||
+        '{"total":800,"records":0,"gifts":0,"transport":0,"tickets":0,"other":0}'
+    );
 
     let html = `
         <div class="page-header">
@@ -514,50 +523,109 @@ function showBudget() {
             <div class="place">
                 <div class="place-icon">💷</div>
                 <div class="place-info">
-                    <strong>Planirani budžet</strong>
-                    <p>400 £ po osobi</p>
-                    <p>2 osobe • ukupno 800 £</p>
+                    <strong>Ukupni budžet</strong>
+                    <p>Koliko ukupno imaš na raspolaganju</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetTotal"
+                    value="${budget.total}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">💿</div>
                 <div class="place-info">
                     <strong>Ploče i glazba</strong>
-                    <p>Record shopovi, ploče i eventualni ulovi.</p>
+                    <p>Record shopovi i ulovi</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetRecords"
+                    value="${budget.records}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🎁</div>
                 <div class="place-info">
                     <strong>Pokloni</strong>
-                    <p>Pokloni za obitelj i sitnice iz Londona.</p>
+                    <p>Pokloni i sitnice</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetGifts"
+                    value="${budget.gifts}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🚇</div>
                 <div class="place-info">
                     <strong>Prijevoz</strong>
-                    <p>Tube, bus, vlakovi i izlet u Brighton.</p>
+                    <p>Tube, bus, vlakovi i Brighton</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetTransport"
+                    value="${budget.transport}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🎟️</div>
                 <div class="place-info">
                     <strong>Ulaznice</strong>
-                    <p>Muzeji, atrakcije i eventualne druge ulaznice.</p>
+                    <p>Muzeji i ostale atrakcije</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetTickets"
+                    value="${budget.tickets}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">☕</div>
                 <div class="place-info">
                     <strong>Ostalo</strong>
-                    <p>Kave, pub, grickalice i neplanirane sitnice.</p>
+                    <p>Kave, pub, grickalice i sitnice</p>
                 </div>
+                <input
+                    type="number"
+                    id="budgetOther"
+                    value="${budget.other}"
+                    min="0"
+                    step="1"
+                    oninput="updateBudget()"
+                    style="width:80px;"
+                >
+                <span>£</span>
             </div>
 
         </section>
@@ -567,8 +635,8 @@ function showBudget() {
             <div class="place">
                 <div class="place-icon">📊</div>
                 <div class="place-info">
-                    <strong>Trenutna potrošnja</strong>
-                    <p>0 £</p>
+                    <strong>Ukupno potrošeno</strong>
+                    <p id="budgetSpent">0 £</p>
                 </div>
             </div>
 
@@ -576,7 +644,7 @@ function showBudget() {
                 <div class="place-icon">💰</div>
                 <div class="place-info">
                     <strong>Preostalo</strong>
-                    <p>800 £</p>
+                    <p id="budgetRemaining">800 £</p>
                 </div>
             </div>
 
@@ -585,10 +653,54 @@ function showBudget() {
 
     container.innerHTML = html;
 
+    updateBudget();
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+}
+
+
+// -----------------------
+// IZRAČUN BUDŽETA
+// -----------------------
+
+function updateBudget() {
+
+    const total = Number(document.getElementById("budgetTotal").value) || 0;
+    const records = Number(document.getElementById("budgetRecords").value) || 0;
+    const gifts = Number(document.getElementById("budgetGifts").value) || 0;
+    const transport = Number(document.getElementById("budgetTransport").value) || 0;
+    const tickets = Number(document.getElementById("budgetTickets").value) || 0;
+    const other = Number(document.getElementById("budgetOther").value) || 0;
+
+    const spent =
+        records +
+        gifts +
+        transport +
+        tickets +
+        other;
+
+    const remaining = total - spent;
+
+    document.getElementById("budgetSpent").textContent =
+        spent.toFixed(0) + " £";
+
+    document.getElementById("budgetRemaining").textContent =
+        remaining.toFixed(0) + " £";
+
+    localStorage.setItem(
+        "londonBudget",
+        JSON.stringify({
+            total: total,
+            records: records,
+            gifts: gifts,
+            transport: transport,
+            tickets: tickets,
+            other: other
+        })
+    );
 }
 function showNotes() {
 
