@@ -125,7 +125,7 @@ function showHome() {
                 <small>Portobello, Camden...</small>
             </button>
 
-           <button class="menu-card" onclick="showHarryPotter()">
+            <button class="menu-card" onclick="comingSoon('Harry Potter')">
                 <span>🧙</span>
                 <strong>Harry Potter</strong>
                 <small>Lokacije i Platform 9¾</small>
@@ -155,98 +155,6 @@ function showHome() {
                 <small>Troškovi putovanja</small>
             </button>
 
-            // -----------------------
-// HARRY POTTER
-// -----------------------
-
-function showHarryPotter() {
-
-    const container = document.querySelector(".container");
-
-    let html = `
-        <div class="page-header">
-            <button class="back-button" onclick="showHome()">← Početna</button>
-            <h2>⚡ Harry Potter</h2>
-            <p>London • Harry Potter lokacije</p>
-        </div>
-
-        <section class="day-card">
-
-            <div class="place">
-                <div class="place-icon">🚂</div>
-                <div class="place-info">
-                    <strong>Platform 9¾</strong>
-                    <p>King's Cross Station</p>
-                    <p>Obavezna fotka na Platformi 9¾. 🧙‍♂️</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Platform 9 3/4 Kings Cross Station, London')">
-                    📍
-                </button>
-            </div>
-
-            <div class="place">
-                <div class="place-icon">🏛️</div>
-                <div class="place-info">
-                    <strong>Leadenhall Market</strong>
-                    <p>City of London</p>
-                    <p>Lokacija korištena za Diagon Alley.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Leadenhall Market, London')">
-                    📍
-                </button>
-            </div>
-
-            <div class="place">
-                <div class="place-icon">🌉</div>
-                <div class="place-info">
-                    <strong>Millennium Bridge</strong>
-                    <p>Thames • St Paul's</p>
-                    <p>Poznati most iz Harry Pottera i Princa miješane krvi.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Millennium Bridge, London')">
-                    📍
-                </button>
-            </div>
-
-            <div class="place">
-                <div class="place-icon">🎬</div>
-                <div class="place-info">
-                    <strong>Warner Bros. Studio Tour</strong>
-                    <p>Harry Potter Studios</p>
-                    <p>Velika Harry Potter atrakcija izvan centra Londona.</p>
-                </div>
-                <button class="map-button"
-                    onclick="openMaps('Warner Bros Studio Tour London')">
-                    📍
-                </button>
-            </div>
-
-        </section>
-
-        <section class="day-card">
-
-            <div class="place">
-                <div class="place-icon">⭐</div>
-                <div class="place-info">
-                    <strong>Prioritet</strong>
-                    <p>Platform 9¾ je obavezna.</p>
-                    <p>Leadenhall Market i Millennium Bridge možemo spojiti s obilaskom Cityja.</p>
-                </div>
-            </div>
-
-        </section>
-    `;
-
-    container.innerHTML = html;
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
             <button class="menu-card" onclick="showNotes()">
                 <span>📝</span>
                 <strong>Bilješke</strong>
@@ -498,18 +406,9 @@ function showRecords() {
 // BUDŽET
 // -----------------------
 
-// -----------------------
-// BUDŽET
-// -----------------------
-
 function showBudget() {
 
     const container = document.querySelector(".container");
-
-    const budget = JSON.parse(
-        localStorage.getItem("londonBudget") ||
-        '{"total":800,"records":0,"gifts":0,"transport":0,"tickets":0,"other":0}'
-    );
 
     let html = `
         <div class="page-header">
@@ -523,109 +422,50 @@ function showBudget() {
             <div class="place">
                 <div class="place-icon">💷</div>
                 <div class="place-info">
-                    <strong>Ukupni budžet</strong>
-                    <p>Koliko ukupno imaš na raspolaganju</p>
+                    <strong>Planirani budžet</strong>
+                    <p>400 £ po osobi</p>
+                    <p>2 osobe • ukupno 800 £</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetTotal"
-                    value="${budget.total}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">💿</div>
                 <div class="place-info">
                     <strong>Ploče i glazba</strong>
-                    <p>Record shopovi i ulovi</p>
+                    <p>Record shopovi, ploče i eventualni ulovi.</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetRecords"
-                    value="${budget.records}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🎁</div>
                 <div class="place-info">
                     <strong>Pokloni</strong>
-                    <p>Pokloni i sitnice</p>
+                    <p>Pokloni za obitelj i sitnice iz Londona.</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetGifts"
-                    value="${budget.gifts}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🚇</div>
                 <div class="place-info">
                     <strong>Prijevoz</strong>
-                    <p>Tube, bus, vlakovi i Brighton</p>
+                    <p>Tube, bus, vlakovi i izlet u Brighton.</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetTransport"
-                    value="${budget.transport}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">🎟️</div>
                 <div class="place-info">
                     <strong>Ulaznice</strong>
-                    <p>Muzeji i ostale atrakcije</p>
+                    <p>Muzeji, atrakcije i eventualne druge ulaznice.</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetTickets"
-                    value="${budget.tickets}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
             <div class="place">
                 <div class="place-icon">☕</div>
                 <div class="place-info">
                     <strong>Ostalo</strong>
-                    <p>Kave, pub, grickalice i sitnice</p>
+                    <p>Kave, pub, grickalice i neplanirane sitnice.</p>
                 </div>
-                <input
-                    type="number"
-                    id="budgetOther"
-                    value="${budget.other}"
-                    min="0"
-                    step="1"
-                    oninput="updateBudget()"
-                    style="width:80px;"
-                >
-                <span>£</span>
             </div>
 
         </section>
@@ -635,8 +475,8 @@ function showBudget() {
             <div class="place">
                 <div class="place-icon">📊</div>
                 <div class="place-info">
-                    <strong>Ukupno potrošeno</strong>
-                    <p id="budgetSpent">0 £</p>
+                    <strong>Trenutna potrošnja</strong>
+                    <p>0 £</p>
                 </div>
             </div>
 
@@ -644,7 +484,7 @@ function showBudget() {
                 <div class="place-icon">💰</div>
                 <div class="place-info">
                     <strong>Preostalo</strong>
-                    <p id="budgetRemaining">800 £</p>
+                    <p>800 £</p>
                 </div>
             </div>
 
@@ -653,54 +493,10 @@ function showBudget() {
 
     container.innerHTML = html;
 
-    updateBudget();
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-}
-
-
-// -----------------------
-// IZRAČUN BUDŽETA
-// -----------------------
-
-function updateBudget() {
-
-    const total = Number(document.getElementById("budgetTotal").value) || 0;
-    const records = Number(document.getElementById("budgetRecords").value) || 0;
-    const gifts = Number(document.getElementById("budgetGifts").value) || 0;
-    const transport = Number(document.getElementById("budgetTransport").value) || 0;
-    const tickets = Number(document.getElementById("budgetTickets").value) || 0;
-    const other = Number(document.getElementById("budgetOther").value) || 0;
-
-    const spent =
-        records +
-        gifts +
-        transport +
-        tickets +
-        other;
-
-    const remaining = total - spent;
-
-    document.getElementById("budgetSpent").textContent =
-        spent.toFixed(0) + " £";
-
-    document.getElementById("budgetRemaining").textContent =
-        remaining.toFixed(0) + " £";
-
-    localStorage.setItem(
-        "londonBudget",
-        JSON.stringify({
-            total: total,
-            records: records,
-            gifts: gifts,
-            transport: transport,
-            tickets: tickets,
-            other: other
-        })
-    );
 }
 function showNotes() {
 
@@ -836,12 +632,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("click", () => {
 
-       if (index === 0) {
+        if (index === 0) {
     showPlan();
 } else if (index === 2) {
     showRecords();
-} else if (index === 4) {
-    showHarryPotter();
 } else if (index === 8) {
     showBudget();
 } else if (index === 9) {
