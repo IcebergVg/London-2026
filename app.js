@@ -113,7 +113,7 @@ function showHome() {
                 <small>Mjesta i navigacija</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Ploče')">
+           <button class="menu-card" onclick="showRecords()">
                 <span>🎵</span>
                 <strong>Ploče</strong>
                 <small>Record shopovi</small>
@@ -309,6 +309,98 @@ function comingSoon(section) {
         "Korak po korak – bit će unutra!"
     );
 
+}
+// -----------------------
+// PLOČE
+// -----------------------
+
+function showRecords() {
+
+    const container = document.querySelector(".container");
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🎵 Ploče</h2>
+            <p>Record shopovi i mjesta za malo kopanja</p>
+        </div>
+
+        <section class="day-card">
+
+            <div class="place">
+                <div class="place-icon">💿</div>
+                <div class="place-info">
+                    <strong>Sister Ray</strong>
+                    <p>Soho • Berwick Street</p>
+                    <p>Jedna od glavnih stanica za vinile.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Sister Ray, London')">
+                    📍
+                </button>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">💿</div>
+                <div class="place-info">
+                    <strong>Reckless Records</strong>
+                    <p>Soho • Berwick Street</p>
+                    <p>Rabljene ploče i kopanje po katalozima.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Reckless Records, London')">
+                    📍
+                </button>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">💿</div>
+                <div class="place-info">
+                    <strong>Flashback Records</strong>
+                    <p>Islington • Essex Road</p>
+                    <p>Posebno zanimljiv second-hand i podrum.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Flashback Records Islington, London')">
+                    📍
+                </button>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">💿</div>
+                <div class="place-info">
+                    <strong>Rarekind Records</strong>
+                    <p>Brighton • North Laine</p>
+                    <p>Nove i rabljene ploče – stanica za Brighton.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Rarekind Records, Brighton')">
+                    📍
+                </button>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">🔎</div>
+                <div class="place-info">
+                    <strong>Snoopers Paradise</strong>
+                    <p>Brighton • North Laine</p>
+                    <p>Vintage, kolekcionarske stvari, igračke i svašta nešto.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Snoopers Paradise, Brighton')">
+                    📍
+                </button>
+            </div>
+
+        </section>
+    `;
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 function showNotes() {
 
