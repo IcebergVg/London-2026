@@ -536,8 +536,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("click", () => {
 
-           if (index === 0) {
+         if (index === 0) {
     showPlan();
+} else if (index === 2) {
+    showRecords();
 } else if (index === 9) {
     showNotes();
 } else {
