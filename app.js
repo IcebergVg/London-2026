@@ -310,3 +310,22 @@ function comingSoon(section) {
     );
 
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuCards = document.querySelectorAll(".menu-card");
+
+    menuCards.forEach((card, index) => {
+
+        card.addEventListener("click", () => {
+
+            if (index === 0) {
+                showPlan();
+            } else {
+                comingSoon(card.querySelector("strong").textContent);
+            }
+
+        });
+
+    });
+
+});
