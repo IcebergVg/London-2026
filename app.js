@@ -310,6 +310,112 @@ function comingSoon(section) {
     );
 
 }
+function showMap() {
+
+    const container = document.querySelector(".container");
+
+    const locations = [
+        {
+            category: "📍 GLAVNE LOKACIJE",
+            places: [
+                "Heathrow Airport",
+                "Soho, London",
+                "Chinatown, London",
+                "Piccadilly Circus, London",
+                "Portobello Road Market, London",
+                "Natural History Museum, London",
+                "Science Museum, London",
+                "King's Cross Station, London",
+                "Camden Market, London",
+                "Tower of London",
+                "Tower Bridge, London",
+                "St Paul's Cathedral, London",
+                "Sky Garden, London"
+            ]
+        },
+        {
+            category: "🎵 PLOČE",
+            places: [
+                "Sister Ray, London",
+                "Reckless Records, London",
+                "Flashback Records, London",
+                "Music & Video Exchange, London"
+            ]
+        },
+        {
+            category: "🧙 HARRY POTTER",
+            places: [
+                "Platform 9¾, King's Cross, London",
+                "Leadenhall Market, London",
+                "Millennium Bridge, London"
+            ]
+        },
+        {
+            category: "🚗 MODELI AUTIĆA",
+            places: [
+                "St Martins Models, Cecil Court, London"
+            ]
+        }
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="goHome()">← Početna</button>
+            <h2>🗺️ Karta Londona</h2>
+            <p>Naše glavne lokacije i mjesta koja želimo posjetiti</p>
+        </div>
+    `;
+
+    locations.forEach(group => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <h3>${group.category}</h3>
+                    </div>
+                </div>
+
+                <div class="places">
+        `;
+
+        group.places.forEach(place => {
+
+            html += `
+                <div class="place">
+
+                    <div class="place-icon">
+                        📍
+                    </div>
+
+                    <div class="place-info">
+                        <strong>${place}</strong>
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place}')">
+                        🗺️
+                    </button>
+
+                </div>
+            `;
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 document.addEventListener("DOMContentLoaded", () => {
 
     const menuCards = document.querySelectorAll(".menu-card");
