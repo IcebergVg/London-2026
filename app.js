@@ -425,9 +425,12 @@ document.addEventListener("DOMContentLoaded", () => {
         card.addEventListener("click", () => {
 
             if (index === 0) {
-                showPlan();
-            } else {
-                comingSoon(card.querySelector("strong").textContent);
+    showPlan();
+} else if (index === 1) {
+    showMap();
+} else {
+    comingSoon(card.querySelector("strong").textContent);
+}
             }
 
         });
