@@ -155,7 +155,7 @@ function showHome() {
                 <small>Troškovi putovanja</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Bilješke')">
+            <button class="menu-card" onclick="showNotes()">
                 <span>📝</span>
                 <strong>Bilješke</strong>
                 <small>Naše bilješke</small>
@@ -320,7 +320,7 @@ function showNotes() {
 
     let html = `
         <div class="page-header">
-            <button class="back-button" onclick="goHome()">← Početna</button>
+           <button class="back-button" onclick="showHome()">← Početna</button>
             <h2>📝 Podsjetnik</h2>
             <p>Stvari koje ne želimo zaboraviti u Londonu</p>
         </div>
