@@ -4,12 +4,42 @@ const itinerary = [
         title: "Dolazak u London",
         icon: "✈️",
         places: [
-            ["15:20", "Heathrow Airport", "Dolazak u London", "✈️"],
-            ["poslijepodne", "Elizabeth Line", "Heathrow → centralni London", "🚆"],
-            ["večer", "Soho", "Lagano upoznavanje s centrom Londona", "📍"],
-            ["večer", "Chinatown", "Obavezna stanica 😁", "🍜"],
-            ["večer", "Piccadilly Circus", "Kratka šetnja i atmosfera", "📍"],
-            ["večer", "Neal's Yard", "Ako bude vremena i energije", "📍"]
+            {
+                time: "15:20",
+                name: "Heathrow Airport",
+                desc: "Dolazak u London",
+                type: "✈️"
+            },
+            {
+                time: "poslijepodne",
+                name: "Elizabeth Line",
+                desc: "Heathrow → centralni London",
+                type: "🚆"
+            },
+            {
+                time: "večer",
+                name: "Soho",
+                desc: "Lagano upoznavanje s centrom Londona",
+                type: "📍"
+            },
+            {
+                time: "večer",
+                name: "Chinatown",
+                desc: "Obavezna stanica 😁",
+                type: "🍜"
+            },
+            {
+                time: "večer",
+                name: "Piccadilly Circus",
+                desc: "Kratka šetnja i atmosfera",
+                type: "📍"
+            },
+            {
+                time: "večer",
+                name: "Neal's Yard",
+                desc: "Ako bude vremena i energije",
+                type: "📍"
+            }
         ]
     },
 
@@ -18,10 +48,30 @@ const itinerary = [
         title: "Portobello & Notting Hill",
         icon: "🛍️",
         places: [
-            ["09:00", "Portobello Road Market", "Glavni cilj dana – subota je pravi dan za Portobello", "🛍️"],
-            ["prijepodne", "Notting Hill", "Šetnja ulicama i razgledavanje", "🏘️"],
-            ["po želji", "Holland Park", "Mogući dodatak ako bude vremena", "🌳"],
-            ["večer", "Soho / pub", "Slobodna večer", "🍺"]
+            {
+                time: "09:00",
+                name: "Portobello Road Market",
+                desc: "Glavni cilj dana – subota je pravi dan za Portobello",
+                type: "🛍️"
+            },
+            {
+                time: "prijepodne",
+                name: "Notting Hill",
+                desc: "Šetnja ulicama i razgledavanje",
+                type: "🏘️"
+            },
+            {
+                time: "po želji",
+                name: "Holland Park",
+                desc: "Mogući dodatak ako bude vremena",
+                type: "🌳"
+            },
+            {
+                time: "večer",
+                name: "Soho / pub",
+                desc: "Slobodna večer",
+                type: "🍺"
+            }
         ]
     },
 
@@ -30,11 +80,36 @@ const itinerary = [
         title: "Brighton",
         icon: "🌊",
         places: [
-            ["jutro", "London → Brighton", "Jednodnevni izlet", "🚆"],
-            ["dan", "Brighton Pier", "More, šetnja i poznati Brighton Pier", "🌊"],
-            ["dan", "The Lanes", "Stari dio grada, trgovine i atmosfera", "🏘️"],
-            ["poslijepodne", "Brighton Seafront", "Šetnja uz more", "🏖️"],
-            ["večer", "Brighton → London", "Povratak u London", "🚆"]
+            {
+                time: "jutro",
+                name: "London → Brighton",
+                desc: "Jednodnevni izlet",
+                type: "🚆"
+            },
+            {
+                time: "dan",
+                name: "Brighton Pier",
+                desc: "More, šetnja i poznati Brighton Pier",
+                type: "🌊"
+            },
+            {
+                time: "dan",
+                name: "The Lanes",
+                desc: "Stari dio grada, trgovine i atmosfera",
+                type: "🏘️"
+            },
+            {
+                time: "poslijepodne",
+                name: "Brighton Seafront",
+                desc: "Šetnja uz more",
+                type: "🏖️"
+            },
+            {
+                time: "večer",
+                name: "Brighton → London",
+                desc: "Povratak u London",
+                type: "🚆"
+            }
         ]
     },
 
@@ -43,11 +118,36 @@ const itinerary = [
         title: "Muzeji + Harry Potter + Camden",
         icon: "🏛️",
         places: [
-            ["jutro", "Natural History Museum", "Glavni muzejski cilj", "🏛️"],
-            ["kasnije", "Science Museum", "Odmah preko puta", "🔬"],
-            ["poslijepodne", "King's Cross", "Platform 9¾ – obavezna fotografija", "🧙"],
-            ["poslijepodne", "St Pancras", "Kratko razgledavanje", "🚉"],
-            ["kasnije", "Camden Market", "Tržnica i večernja atmosfera", "🛍️"]
+            {
+                time: "jutro",
+                name: "Natural History Museum",
+                desc: "Glavni muzejski cilj",
+                type: "🏛️"
+            },
+            {
+                time: "kasnije",
+                name: "Science Museum",
+                desc: "Odmah preko puta",
+                type: "🔬"
+            },
+            {
+                time: "poslijepodne",
+                name: "King's Cross",
+                desc: "Platform 9¾ – obavezna fotografija",
+                type: "🧙"
+            },
+            {
+                time: "poslijepodne",
+                name: "St Pancras",
+                desc: "Kratko razgledavanje",
+                type: "🚉"
+            },
+            {
+                time: "kasnije",
+                name: "Camden Market",
+                desc: "Tržnica i večernja atmosfera",
+                type: "🛍️"
+            }
         ]
     },
 
@@ -56,16 +156,66 @@ const itinerary = [
         title: "City + Sky Garden + ploče",
         icon: "🌇",
         places: [
-            ["jutro", "Tower of London", "Vani ili unutra, ovisno o vremenu", "🏰"],
-            ["jutro", "Tower Bridge", "Šetnja preko mosta", "🌉"],
-            ["prijepodne", "Leadenhall Market", "Harry Potter lokacija", "🧙"],
-            ["podne", "St Paul's Cathedral", "Razgledavanje izvana", "⛪"],
-            ["podne", "Millennium Bridge", "Još jedna Harry Potter lokacija", "🧙"],
-            ["kasno poslijepodne", "Sky Garden", "Pogled na London – idealno pred zalazak", "🌇"],
-            ["večer", "Sister Ray", "Record shop", "🎵"],
-            ["večer", "Reckless Records", "Record shop", "🎵"],
-            ["večer", "St Martins Models", "Modeli autića – Cecil Court", "🚗"],
-            ["večer", "Chinatown / Soho", "Zadnja večer u Londonu", "🍜"]
+            {
+                time: "jutro",
+                name: "Tower of London",
+                desc: "Vani ili unutra, ovisno o vremenu",
+                type: "🏰"
+            },
+            {
+                time: "jutro",
+                name: "Tower Bridge",
+                desc: "Šetnja preko mosta",
+                type: "🌉"
+            },
+            {
+                time: "prijepodne",
+                name: "Leadenhall Market",
+                desc: "Harry Potter lokacija",
+                type: "🧙"
+            },
+            {
+                time: "podne",
+                name: "St Paul's Cathedral",
+                desc: "Razgledavanje izvana",
+                type: "⛪"
+            },
+            {
+                time: "podne",
+                name: "Millennium Bridge",
+                desc: "Još jedna Harry Potter lokacija",
+                type: "🧙"
+            },
+            {
+                time: "kasno poslijepodne",
+                name: "Sky Garden",
+                desc: "Pogled na London – idealno pred zalazak",
+                type: "🌇"
+            },
+            {
+                time: "večer",
+                name: "Sister Ray",
+                desc: "Record shop",
+                type: "🎵"
+            },
+            {
+                time: "večer",
+                name: "Reckless Records",
+                desc: "Record shop",
+                type: "🎵"
+            },
+            {
+                time: "večer",
+                name: "St Martins Models",
+                desc: "Modeli autića – Cecil Court",
+                type: "🚗"
+            },
+            {
+                time: "večer",
+                name: "Chinatown / Soho",
+                desc: "Zadnja večer u Londonu",
+                type: "🍜"
+            }
         ]
     },
 
@@ -74,103 +224,22 @@ const itinerary = [
         title: "Povratak",
         icon: "✈️",
         places: [
-            ["rano jutro", "London → Heathrow", "Let u 08:40", "🚆"],
-            ["08:40", "Heathrow Airport", "✈️ Povratak kući", "✈️"]
+            {
+                time: "rano jutro",
+                name: "London → Heathrow",
+                desc: "Let u 08:40",
+                type: "🚆"
+            },
+            {
+                time: "08:40",
+                name: "Heathrow Airport",
+                desc: "✈️ Povratak kući",
+                type: "✈️"
+            }
         ]
     }
 ];
 
-
-// -------------------------
-// POČETNI EKRAN
-// -------------------------
-
-function showHome() {
-
-    const container = document.querySelector(".container");
-
-    container.innerHTML = `
-        <section class="welcome">
-            <h2>London calling! 🎸</h2>
-            <p>
-                Naš plan puta, mjesta koja želimo vidjeti,
-                ploče koje želimo pronaći i sve ostalo što
-                nas čeka u Londonu.
-            </p>
-        </section>
-
-        <section class="menu">
-
-            <button class="menu-card" onclick="showPlan()">
-                <span>📅</span>
-                <strong>Plan puta</strong>
-                <small>Plan po danima</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Karta')">
-                <span>🗺️</span>
-                <strong>Karta</strong>
-                <small>Mjesta i navigacija</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Ploče')">
-                <span>🎵</span>
-                <strong>Ploče</strong>
-                <small>Record shopovi</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Tržnice')">
-                <span>🛍️</span>
-                <strong>Tržnice</strong>
-                <small>Portobello, Camden...</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Harry Potter')">
-                <span>🧙</span>
-                <strong>Harry Potter</strong>
-                <small>Lokacije i Platform 9¾</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Muzeji')">
-                <span>🏛️</span>
-                <strong>Muzeji</strong>
-                <small>Natural History, Science...</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Modeli autića')">
-                <span>🚗</span>
-                <strong>Modeli autića</strong>
-                <small>Shopovi i modeli</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Izleti')">
-                <span>✈️</span>
-                <strong>Izleti</strong>
-                <small>Brighton, Windsor...</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Budžet')">
-                <span>💷</span>
-                <strong>Budžet</strong>
-                <small>Troškovi putovanja</small>
-            </button>
-
-            <button class="menu-card" onclick="comingSoon('Bilješke')">
-                <span>📝</span>
-                <strong>Bilješke</strong>
-                <small>Naše bilješke</small>
-            </button>
-
-        </section>
-    `;
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-
-// -------------------------
-// PLAN PUTA
-// -------------------------
 
 function showPlan() {
 
@@ -178,13 +247,13 @@ function showPlan() {
 
     let html = `
         <div class="page-header">
-            <button class="back-button" onclick="showHome()">← Početna</button>
+            <button class="back-button" onclick="goHome()">← Početna</button>
             <h2>📅 Plan puta</h2>
             <p>London • 09.10. – 14.10.2026.</p>
         </div>
     `;
 
-    itinerary.forEach((day, dayIndex) => {
+    itinerary.forEach((day, index) => {
 
         html += `
             <section class="day-card">
@@ -195,49 +264,45 @@ function showPlan() {
                         <h3>${day.icon} ${day.title}</h3>
                     </div>
 
-                    <span class="day-number">${dayIndex + 1}</span>
+                    <span class="day-number">${index + 1}</span>
                 </div>
 
                 <div class="places">
         `;
 
-        day.places.forEach((place, placeIndex) => {
-
-            const id = `day-${dayIndex}-place-${placeIndex}`;
-            const checked = localStorage.getItem(id) === "true";
+        day.places.forEach(place => {
 
             html += `
-                <div class="place ${checked ? "visited" : ""}">
+                <div class="place">
 
-                    <button
-                        class="check-button"
-                        onclick="toggleVisited('${id}', this)">
-                        ${checked ? "✓" : "○"}
-                    </button>
-
-                    <div class="place-icon">${place[3]}</div>
+                    <div class="place-icon">
+                        ${place.type}
+                    </div>
 
                     <div class="place-info">
 
                         <div class="place-time">
-                            ${place[0]}
+                            ${place.time}
                         </div>
 
-                        <strong>${place[1]}</strong>
+                        <strong>
+                            ${place.name}
+                        </strong>
 
-                        <p>${place[2]}</p>
+                        <p>
+                            ${place.desc}
+                        </p>
 
                     </div>
 
                     <button
                         class="map-button"
-                        onclick="openMaps('${place[1]}, London')">
+                        onclick="openMaps('${place.name}, London')">
                         🗺️
                     </button>
 
                 </div>
             `;
-
         });
 
         html += `
@@ -255,36 +320,10 @@ function showPlan() {
 }
 
 
-// -------------------------
-// OBIĐENO
-// -------------------------
-
-function toggleVisited(id, button) {
-
-    const place = button.closest(".place");
-
-    const current = localStorage.getItem(id) === "true";
-    const newValue = !current;
-
-    localStorage.setItem(id, newValue);
-
-    if (newValue) {
-
-        button.textContent = "✓";
-        place.classList.add("visited");
-
-    } else {
-
-        button.textContent = "○";
-        place.classList.remove("visited");
-
-    }
+function goHome() {
+    location.reload();
 }
 
-
-// -------------------------
-// GOOGLE MAPS
-// -------------------------
 
 function openMaps(place) {
 
@@ -293,20 +332,33 @@ function openMaps(place) {
         encodeURIComponent(place);
 
     window.open(url, "_blank");
-
 }
 
 
-// -------------------------
-// ZA SEKCIJE KOJE JOŠ RADIMO
-// -------------------------
+document.addEventListener("DOMContentLoaded", () => {
 
-function comingSoon(section) {
+    const menuCards =
+        document.querySelectorAll(".menu-card");
 
-    alert(
-        section +
-        "\n\nOvaj dio aplikacije još slažemo. 😉\n\n" +
-        "Korak po korak – bit će unutra!"
-    );
+    menuCards.forEach((card, index) => {
 
-}
+        card.addEventListener("click", () => {
+
+            if (index === 0) {
+
+                showPlan();
+
+            } else {
+
+                alert(
+                    "Ovaj dio aplikacije još slažemo. 😉\n\n" +
+                    "Uskoro: karta, ploče, tržnice, Harry Potter, muzeji..."
+                );
+
+            }
+
+        });
+
+    });
+
+});
