@@ -149,7 +149,7 @@ function showHome() {
                 <small>Brighton, Windsor...</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Budžet')">
+            <button class="menu-card" onclick="showBudget()">
                 <span>💷</span>
                 <strong>Budžet</strong>
                 <small>Troškovi putovanja</small>
@@ -402,6 +402,102 @@ function showRecords() {
         behavior: "smooth"
     });
 }
+// -----------------------
+// BUDŽET
+// -----------------------
+
+function showBudget() {
+
+    const container = document.querySelector(".container");
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>💷 Budžet</h2>
+            <p>London • 09.10. – 14.10.2026.</p>
+        </div>
+
+        <section class="day-card">
+
+            <div class="place">
+                <div class="place-icon">💷</div>
+                <div class="place-info">
+                    <strong>Planirani budžet</strong>
+                    <p>400 £ po osobi</p>
+                    <p>2 osobe • ukupno 800 £</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">💿</div>
+                <div class="place-info">
+                    <strong>Ploče i glazba</strong>
+                    <p>Record shopovi, ploče i eventualni ulovi.</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">🎁</div>
+                <div class="place-info">
+                    <strong>Pokloni</strong>
+                    <p>Pokloni za obitelj i sitnice iz Londona.</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">🚇</div>
+                <div class="place-info">
+                    <strong>Prijevoz</strong>
+                    <p>Tube, bus, vlakovi i izlet u Brighton.</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">🎟️</div>
+                <div class="place-info">
+                    <strong>Ulaznice</strong>
+                    <p>Muzeji, atrakcije i eventualne druge ulaznice.</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">☕</div>
+                <div class="place-info">
+                    <strong>Ostalo</strong>
+                    <p>Kave, pub, grickalice i neplanirane sitnice.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="day-card">
+
+            <div class="place">
+                <div class="place-icon">📊</div>
+                <div class="place-info">
+                    <strong>Trenutna potrošnja</strong>
+                    <p>0 £</p>
+                </div>
+            </div>
+
+            <div class="place">
+                <div class="place-icon">💰</div>
+                <div class="place-info">
+                    <strong>Preostalo</strong>
+                    <p>800 £</p>
+                </div>
+            </div>
+
+        </section>
+    `;
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 function showNotes() {
 
     const container = document.querySelector(".container");
@@ -536,10 +632,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("click", () => {
 
-         if (index === 0) {
+        if (index === 0) {
     showPlan();
 } else if (index === 2) {
     showRecords();
+} else if (index === 8) {
+    showBudget();
 } else if (index === 9) {
     showNotes();
 } else {
