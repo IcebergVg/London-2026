@@ -243,6 +243,8 @@ const itinerary = [
 
 function showPlan() {
 
+   function showPlan() {
+
     const container = document.querySelector(".container");
 
     let html = `
@@ -253,7 +255,7 @@ function showPlan() {
         </div>
     `;
 
-    itinerary.forEach((day, index) => {
+    itinerary.forEach((day, dayIndex) => {
 
         html += `
             <section class="day-card">
@@ -264,16 +266,25 @@ function showPlan() {
                         <h3>${day.icon} ${day.title}</h3>
                     </div>
 
-                    <span class="day-number">${index + 1}</span>
+                    <span class="day-number">${dayIndex + 1}</span>
                 </div>
 
                 <div class="places">
         `;
 
-        day.places.forEach(place => {
+        day.places.forEach((place, placeIndex) => {
+
+            const key = `visited-${dayIndex}-${placeIndex}`;
+            const visited = localStorage.getItem(key) === "true";
 
             html += `
-                <div class="place">
+                <div class="place ${visited ? "visited" : ""}">
+
+                    <button
+                        class="check-button"
+                        onclick="toggleVisited(${dayIndex}, ${placeIndex})">
+                        ${visited ? "✓" : ""}
+                    </button>
 
                     <div class="place-icon">
                         ${place.type}
@@ -319,6 +330,16 @@ function showPlan() {
     });
 }
 
+
+function toggleVisited(dayIndex, placeIndex) {
+
+    const key = `visited-${dayIndex}-${placeIndex}`;
+    const current = localStorage.getItem(key) === "true";
+
+    localStorage.setItem(key, !current);
+
+    showPlan();
+}
 
 function goHome() {
     location.reload();
