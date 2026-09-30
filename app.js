@@ -310,6 +310,132 @@ function comingSoon(section) {
     );
 
 }
+function showNotes() {
+
+    const container = document.querySelector(".container");
+
+    let notes = JSON.parse(
+        localStorage.getItem("londonNotes") || "[]"
+    );
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="goHome()">← Početna</button>
+            <h2>📝 Podsjetnik</h2>
+            <p>Stvari koje ne želimo zaboraviti u Londonu</p>
+        </div>
+
+        <section class="day-card notes-card">
+
+            <div class="notes-input">
+                <textarea
+                    id="noteInput"
+                    placeholder="Napiši nešto što ne smijem zaboraviti..."
+                    rows="3"></textarea>
+
+                <button
+                    id="addNoteButton"
+                    class="back-button">
+                    ＋ Dodaj podsjetnik
+                </button>
+            </div>
+
+            <div id="notesList">
+    `;
+
+    if (notes.length === 0) {
+
+        html += `
+            <div class="place">
+                <div class="place-icon">💡</div>
+                <div class="place-info">
+                    <strong>Još nema podsjetnika</strong>
+                    <p>Dodaj nešto što želiš zapamtiti.</p>
+                </div>
+            </div>
+        `;
+
+    } else {
+
+        notes.forEach((note, index) => {
+
+            html += `
+                <div class="place note-item">
+
+                    <div class="place-icon">
+                        📝
+                    </div>
+
+                    <div class="place-info">
+                        <strong>${note}</strong>
+                    </div>
+
+                    <button
+                        class="map-button delete-note"
+                        data-index="${index}">
+                        ✕
+                    </button>
+
+                </div>
+            `;
+        });
+    }
+
+    html += `
+            </div>
+        </section>
+    `;
+
+    container.innerHTML = html;
+
+    document
+        .getElementById("addNoteButton")
+        .addEventListener("click", () => {
+
+            const input =
+                document.getElementById("noteInput");
+
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            notes.push(text);
+
+            localStorage.setItem(
+                "londonNotes",
+                JSON.stringify(notes)
+            );
+
+            showNotes();
+        });
+
+    document
+        .querySelectorAll(".delete-note")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const index =
+                    Number(button.dataset.index);
+
+                notes.splice(index, 1);
+
+                localStorage.setItem(
+                    "londonNotes",
+                    JSON.stringify(notes)
+                );
+
+                showNotes();
+            });
+
+        });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const menuCards = document.querySelectorAll(".menu-card");
@@ -318,11 +444,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         card.addEventListener("click", () => {
 
-            if (index === 0) {
-                showPlan();
-            } else {
-                comingSoon(card.querySelector("strong").textContent);
-            }
+           if (index === 0) {
+    showPlan();
+} else if (index === 9) {
+    showNotes();
+} else {
+    comingSoon(card.querySelector("strong").textContent);
+}
 
         });
 
