@@ -108,11 +108,11 @@ function showHome() {
             </button>
 
             
-           <button class="menu-card" onclick="showRecords()">
-                <span>🎵</span>
-                <strong>Ploče</strong>
-                <small>Record shopovi</small>
-            </button>
+          <button class="menu-card" onclick="showStores()">
+    <span>🏪</span>
+    <strong>Trgovine</strong>
+    <small>Ploče • Autići • Pokloni</small>
+</button>
 
             <button class="menu-card" onclick="comingSoon('Tržnice')">
                 <span>🛍️</span>
