@@ -138,7 +138,7 @@ function showHome() {
                 <small>Shopovi i modeli</small>
             </button>
 
-            <button class="menu-card" onclick="showTrips()">
+            <button class="menu-card" onclick="comingSoon('Izleti')">
                 <span>✈️</span>
                 <strong>Izleti</strong>
                 <small>Brighton, Windsor...</small>
