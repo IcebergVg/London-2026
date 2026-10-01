@@ -107,12 +107,7 @@ function showHome() {
                 <small>Plan po danima</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Karta')">
-                <span>🗺️</span>
-                <strong>Karta</strong>
-                <small>Mjesta i navigacija</small>
-            </button>
-
+            
            <button class="menu-card" onclick="showRecords()">
                 <span>🎵</span>
                 <strong>Ploče</strong>
