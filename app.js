@@ -126,7 +126,7 @@ function showHome() {
                 <small>Lokacije i Platform 9¾</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Muzeji')">
+            <button class="menu-card" onclick="showMuseums()">
                 <span>🏛️</span>
                 <strong>Muzeji</strong>
                 <small>Natural History, Science...</small>
