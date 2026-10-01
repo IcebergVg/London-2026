@@ -954,6 +954,126 @@ function showMuseums() {
         behavior: "smooth"
     });
 }
+function showStores() {
+
+    const container = document.querySelector(".container");
+
+    const sections = [
+        {
+            title: "💿 PLOČE",
+            subtitle: "Gdje tražiti vinile",
+            places: [
+                ["", "Sister Ray", "Soho • Berwick Street", "💿"],
+                ["", "Reckless Records", "Soho • Berwick Street", "💿"],
+                ["", "Third Man Records", "Soho • Marshall Street", "💿"],
+                ["", "Phonica Records", "Soho • Poland Street", "💿"],
+                ["", "UMusic Shop Camden", "Camden • Stables Market", "💿"],
+                ["", "Honest Jon's", "Portobello • Portobello Road", "💿"],
+                ["", "Lion Records", "Portobello • Portobello Road", "💿"],
+                ["", "Firebird Records", "Portobello • Portobello Road", "💿"]
+            ]
+        },
+
+        {
+            title: "🚗 AUTIĆI",
+            subtitle: "Modeli • 1:43 • F1",
+            places: [
+                ["", "TK Maxx", "Camden • Camden High Street • pogledati povoljne modele", "🚗"],
+                ["", "Hamleys", "King's Cross / St Pancras • pogledati ako smo već tamo", "🚗"],
+                ["", "Hamleys", "Soho • Regent Street • pogledati ako smo već u blizini", "🚗"],
+                ["", "Andy Morant Toys", "Portobello • vintage/die-cast • samo ako cijena ima smisla", "🚗"],
+                ["", "Portobello Road Market", "Notting Hill • štandovi i second-hand modeli", "🚗"]
+            ]
+        },
+
+        {
+            title: "🎁 POKLONI",
+            subtitle: "Sestra • nećakinja • klinac • Jadranka",
+            places: [
+                ["", "98 Types Studio", "Camden • mali filmski/glazbeni printevi i pokloni", "🎬"],
+                ["", "Benjamin Pollock's Toyshop", "Covent Garden • tradicionalne igračke i neobične sitnice", "🧸"],
+                ["", "The Moomin Shop", "Covent Garden • pokloni i sitnice", "🎁"],
+                ["", "London Transport Museum Shop", "Covent Garden • londonski dizajn i pokloni", "🎁"],
+                ["", "ARTBOX", "Covent Garden • sitni pokloni i kolekcionarske stvari", "🎁"],
+                ["", "Hamleys", "Soho • Regent Street • igračke i pokloni", "🎁"],
+                ["", "House of MinaLima", "Soho • Harry Potter / grafički dizajn / printevi", "🎨"]
+            ]
+        }
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🏪 Trgovine</h2>
+            <p>Ploče • Autići • Pokloni</p>
+        </div>
+    `;
+
+    sections.forEach((section, sectionIndex) => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <span class="day-date">${section.subtitle}</span>
+                        <h3>${section.title}</h3>
+                    </div>
+
+                    <span class="day-number">${sectionIndex + 1}</span>
+                </div>
+
+                <div class="places">
+        `;
+
+        section.places.forEach((place, placeIndex) => {
+
+            const id = `store-${sectionIndex}-place-${placeIndex}`;
+            const checked = localStorage.getItem(id) === "true";
+
+            html += `
+                <div class="place ${checked ? "visited" : ""}">
+
+                    <button
+                        class="check-button"
+                        onclick="toggleVisited('${id}', this)">
+                        ${checked ? "✓" : "○"}
+                    </button>
+
+                    <div class="place-icon">${place[3]}</div>
+
+                    <div class="place-info">
+
+                        <strong>${place[1]}</strong>
+
+                        <p>${place[2]}</p>
+
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place[1]}, London')">
+                        🗺️
+                    </button>
+
+                </div>
+            `;
+
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 // -----------------------
 // BUDŽET
 // -----------------------
