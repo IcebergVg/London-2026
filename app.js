@@ -171,6 +171,177 @@ function showPlan() {
 
     const container = document.querySelector(".container");
 
+    const itinerary = [
+
+        {
+            date: "Petak • 09.10.",
+            title: "Soho • Chinatown • Neal's Yard",
+            icon: "🌆",
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["Popodne", "Soho", "Prva lagana šetnja Londonom nakon dolaska.", "🌆"],
+                        ["", "Berwick Street", "Poznata ulica u Sohou – usput pogledati što ima.", "🏙️"],
+                        ["", "Chinatown", "Prošetati bez žurbe i večera.", "🍜"],
+                        ["", "Neal's Yard", "Mali šareni trg kod Covent Gardena.", "🌈"],
+                        ["", "Seven Dials", "Nastavak šetnje ako bude vremena i energije.", "📍"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Reckless Records", "Rabljene ploče – pogledati ako ima vremena.", "💿"],
+                        ["", "Sister Ray", "Ploče, uključujući second-hand ponudu.", "💿"],
+                        ["", "Sounds of the Universe", "Glazba i vinili.", "💿"],
+                        ["", "Phonica Records", "Vinili i glazba.", "💿"],
+                        ["", "Third Man Records London", "Glazbena trgovina.", "🎵"],
+                        ["", "Hamleys", "Pogledati Bburago, F1 i eventualno Alfu.", "🚗"],
+                        ["", "TK Maxx Charing Cross Road", "Ako se naleti na zanimljiv model – bonus.", "🚗"]
+                    ]
+                }
+
+            ]
+        },
+
+        {
+            date: "Subota • 10.10.",
+            title: "Portobello • Notting Hill",
+            icon: "🛍️",
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["Jutro", "Portobello Road Market", "Glavni sadržaj dana – market, vintage, antikviteti i atmosfera.", "🛍️"],
+                        ["", "Portobello Green", "Kolekcionarske stvari i štandovi.", "🏺"],
+                        ["", "Notting Hill", "Šetnja kvartom.", "🏘️"],
+                        ["", "Westbourne Grove", "Lagani nastavak šetnje.", "🚶"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Honest Jon's", "Record shop – ako ti se gleda po pločama.", "💿"],
+                        ["", "Lion Records", "Vinili u Portobello području.", "💿"],
+                        ["", "Firebird Records", "Još jedna mogućnost za ploče.", "💿"],
+                        ["", "Rough Trade West", "Record shop u Notting Hillu.", "💿"],
+                        ["", "Portobello vintage trgovine", "Pogledati kolekcionarske stvari i igračke.", "🚗"]
+                    ]
+                },
+
+                {
+                    title: "☕ PAUZA / AKO OSTANE VREMENA",
+                    places: [
+                        ["", "Portobello Road", "Street food, kava i nešto pojesti.", "☕"],
+                        ["", "Holland Park", "Samo ako ostane energije.", "🌳"]
+                    ]
+                }
+
+            ]
+        },
+
+        {
+            date: "Nedjelja • 11.10.",
+            title: "Brighton",
+            icon: "🌊",
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["Jutro", "Brighton", "Cijeli dan izlet – bez žurbe.", "🌊"],
+                        ["", "Brighton Palace Pier", "Šetnja po Pieru i pogled na more.", "🎡"],
+                        ["", "The Lanes", "Uske ulice, trgovine i atmosfera.", "🏘️"],
+                        ["", "Royal Pavilion", "Jedna od glavnih znamenitosti Brightona.", "🏛️"],
+                        ["", "Pavilion Gardens", "Odmor i šetnja.", "🌳"],
+                        ["", "Brighton Seafront", "Šetnja uz more.", "🌊"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Rarekind Records", "Pogledati ploče ako se uklapa u šetnju.", "💿"],
+                        ["", "Snoopers Paradise", "Vintage i second-hand – bonus.", "🛍️"]
+                    ]
+                },
+
+                {
+                    title: "☕ PAUZA",
+                    places: [
+                        ["", "The Lanes", "Ručak, kava i malo odmora.", "☕"]
+                    ]
+                }
+
+            ]
+        },
+
+        {
+            date: "Ponedjeljak • 12.10.",
+            title: "Muzeji • King's Cross • Camden",
+            icon: "🏛️",
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["Jutro", "Natural History Museum", "Jedan od glavnih londonskih muzeja.", "🦖"],
+                        ["", "Science Museum", "Znanost, tehnologija i svemir.", "🚀"],
+                        ["Popodne", "King's Cross", "Postaja i područje oko nje.", "🚂"],
+                        ["", "Platform 9¾", "Obavezna Harry Potter foto-točka.", "🧙"],
+                        ["", "St Pancras", "Pogledati prekrasnu postaju.", "🏛️"],
+                        ["", "Camden Market", "Market, trgovine, hrana i atmosfera.", "🛍️"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Camden High Street", "Pogledati trgovine i street style.", "🛍️"],
+                        ["", "UMusic Shop Camden", "Glazba – bonus ako se uklapa.", "💿"],
+                        ["", "Camden Market", "Vintage, kolekcionarske stvari i sitnice.", "🎁"]
+                    ]
+                }
+
+            ]
+        },
+
+        {
+            date: "Utorak • 13.10.",
+            title: "Tower • City • Harry Potter • Sky Garden",
+            icon: "🏰",
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["Jutro", "Tower of London", "Jedna od glavnih londonskih znamenitosti.", "🏰"],
+                        ["", "Tower Bridge", "Šetnja preko mosta i pogled na Temzu.", "🌉"],
+                        ["", "Leadenhall Market", "Harry Potter lokacija.", "🧙"],
+                        ["", "St Paul's Cathedral", "Katedrala i okolica.", "⛪"],
+                        ["", "Millennium Bridge", "Harry Potter lokacija i pogled prema St Paul'su.", "🌉"],
+                        ["Kasnije", "Sky Garden", "Pogled na London – idealno predvečer.", "🌇"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "City of London", "Prošetati okolnim ulicama ako ostane vremena.", "🏙️"],
+                        ["", "F1 / modeli / kolekcionarske stvari", "Samo ako se nešto zanimljivo pojavi na ruti.", "🏎️"]
+                    ]
+                }
+
+            ]
+        }
+
+    ];
+
+
     let html = `
         <div class="page-header">
             <button class="back-button" onclick="showHome()">← Početna</button>
@@ -178,6 +349,7 @@ function showPlan() {
             <p>London • 09.10. – 14.10.2026.</p>
         </div>
     `;
+
 
     itinerary.forEach((day, dayIndex) => {
 
@@ -192,56 +364,100 @@ function showPlan() {
 
                     <span class="day-number">${dayIndex + 1}</span>
                 </div>
-
-                <div class="places">
         `;
 
-        day.places.forEach((place, placeIndex) => {
 
-            const id = `day-${dayIndex}-place-${placeIndex}`;
-            const checked = localStorage.getItem(id) === "true";
+        day.sections.forEach((section) => {
 
             html += `
-                <div class="place ${checked ? "visited" : ""}">
-
-                    <button
-                        class="check-button"
-                        onclick="toggleVisited('${id}', this)">
-                        ${checked ? "✓" : "○"}
-                    </button>
-
-                    <div class="place-icon">${place[3]}</div>
-
-                    <div class="place-info">
-
-                        <div class="place-time">
-                            ${place[0]}
-                        </div>
-
-                        <strong>${place[1]}</strong>
-
-                        <p>${place[2]}</p>
-
-                    </div>
-
-                    <button
-                        class="map-button"
-                        onclick="openMaps('${place[1]}, London')">
-                        🗺️
-                    </button>
-
+                <div class="plan-section-title">
+                    ${section.title}
                 </div>
+
+                <div class="places">
             `;
 
+
+            section.places.forEach((place) => {
+
+                const placeIndex =
+                    itinerary
+                        .slice(0, dayIndex)
+                        .reduce(
+                            (sum, d) =>
+                                sum +
+                                d.sections.reduce(
+                                    (s, sec) => s + sec.places.length,
+                                    0
+                                ),
+                            0
+                        )
+                    +
+                    day.sections
+                        .slice(0, day.sections.indexOf(section))
+                        .reduce(
+                            (sum, sec) => sum + sec.places.length,
+                            0
+                        )
+                    +
+                    section.places.indexOf(place);
+
+                const id = `day-${dayIndex}-place-${placeIndex}`;
+
+                const checked =
+                    localStorage.getItem(id) === "true";
+
+
+                html += `
+                    <div class="place ${checked ? "visited" : ""}">
+
+                        <button
+                            class="check-button"
+                            onclick="toggleVisited('${id}', this)">
+                            ${checked ? "✓" : "○"}
+                        </button>
+
+                        <div class="place-icon">
+                            ${place[3]}
+                        </div>
+
+                        <div class="place-info">
+
+                            <div class="place-time">
+                                ${place[0]}
+                            </div>
+
+                            <strong>${place[1]}</strong>
+
+                            <p>${place[2]}</p>
+
+                        </div>
+
+                        <button
+                            class="map-button"
+                            onclick="openMaps('${place[1]}, London')">
+                            🗺️
+                        </button>
+
+                    </div>
+                `;
+            });
+
+
+            html += `
+                </div>
+            `;
         });
 
+
         html += `
-                </div>
             </section>
         `;
     });
 
+
     container.innerHTML = html;
+
 
     window.scrollTo({
         top: 0,
