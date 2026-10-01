@@ -590,8 +590,28 @@ function showRecords() {
                 </button>
             </div>
 
-                {
-                 
+            <div class="place">
+                <div class="place-icon">🔎</div>
+                <div class="place-info">
+                    <strong>Snoopers Paradise</strong>
+                    <p>Brighton • North Laine</p>
+                    <p>Vintage, kolekcionarske stvari, igračke i svašta nešto.</p>
+                </div>
+                <button class="map-button"
+                    onclick="openMaps('Snoopers Paradise, Brighton')">
+                    📍
+                </button>
+            </div>
+
+        </section>
+    `;
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 // -----------------------
 // BUDŽET
