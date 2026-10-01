@@ -171,6 +171,69 @@ function showPlan() {
 
     const container = document.querySelector(".container");
 
+    const days = [
+        ["✈️", "Petak • 09.10.", "Soho • Chinatown • Neal's Yard"],
+        ["🛍️", "Subota • 10.10.", "Portobello • Notting Hill"],
+        ["🌊", "Nedjelja • 11.10.", "Brighton"],
+        ["🏛️", "Ponedjeljak • 12.10.", "Muzeji • King's Cross • Camden"],
+        ["🏰", "Utorak • 13.10.", "Tower • City • Harry Potter • Horizon 22 • Sky Garden"]
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>📅 Plan puta</h2>
+            <p>London • 09.10. – 14.10.2026.</p>
+        </div>
+
+        <section class="day-card">
+    `;
+
+    days.forEach((day, index) => {
+
+        html += `
+            <div
+                class="place"
+                onclick="showDay(${index})"
+                style="cursor:pointer;"
+            >
+
+                <div class="place-icon">
+                    ${day[0]}
+                </div>
+
+                <div class="place-info">
+
+                    <strong>${day[1]}</strong>
+
+                    <p>${day[2]}</p>
+
+                </div>
+
+                <div style="font-size:24px;">
+                    ›
+                </div>
+
+            </div>
+        `;
+
+    });
+
+    html += `
+        </section>
+    `;
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+function showDay(dayIndex) {
+
+    const container = document.querySelector(".container");
+
     const itinerary = [
 
         {
@@ -178,7 +241,6 @@ function showPlan() {
             title: "Soho • Chinatown • Neal's Yard",
             icon: "🌆",
             sections: [
-
                 {
                     title: "🎯 GLAVNO",
                     places: [
@@ -189,7 +251,6 @@ function showPlan() {
                         ["", "Seven Dials", "Nastavak šetnje ako bude vremena i energije.", "📍"]
                     ]
                 },
-
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
@@ -202,7 +263,6 @@ function showPlan() {
                         ["", "TK Maxx Charing Cross Road", "Ako se naleti na zanimljiv model – bonus.", "🚗"]
                     ]
                 }
-
             ]
         },
 
@@ -211,7 +271,6 @@ function showPlan() {
             title: "Portobello • Notting Hill",
             icon: "🛍️",
             sections: [
-
                 {
                     title: "🎯 GLAVNO",
                     places: [
@@ -221,7 +280,6 @@ function showPlan() {
                         ["", "Westbourne Grove", "Lagani nastavak šetnje.", "🚶"]
                     ]
                 },
-
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
@@ -232,7 +290,6 @@ function showPlan() {
                         ["", "Portobello vintage trgovine", "Pogledati kolekcionarske stvari i igračke.", "🚗"]
                     ]
                 },
-
                 {
                     title: "☕ PAUZA / AKO OSTANE VREMENA",
                     places: [
@@ -240,7 +297,6 @@ function showPlan() {
                         ["", "Holland Park", "Samo ako ostane energije.", "🌳"]
                     ]
                 }
-
             ]
         },
 
@@ -249,7 +305,6 @@ function showPlan() {
             title: "Brighton",
             icon: "🌊",
             sections: [
-
                 {
                     title: "🎯 GLAVNO",
                     places: [
@@ -261,22 +316,22 @@ function showPlan() {
                         ["", "Brighton Seafront", "Šetnja uz more.", "🌊"]
                     ]
                 },
-
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
                         ["", "Rarekind Records", "Pogledati ploče ako se uklapa u šetnju.", "💿"],
-                        ["", "Snoopers Paradise", "Vintage i second-hand – bonus.", "🛍️"]
+                        ["", "Resident Music", "Glazba i vinili u North Laine području.", "💿"],
+                        ["", "Snoopers Paradise", "Vintage i second-hand – bonus.", "🕰️"],
+                        ["", "North Laine Bazaar", "Vintage, kolekcionarske stvari i sitnice.", "🎁"]
                     ]
                 },
-
                 {
-                    title: "☕ PAUZA",
+                    title: "🍦 PAUZA / NEŠTO FINO",
                     places: [
-                        ["", "The Lanes", "Ručak, kava i malo odmora.", "☕"]
+                        ["", "North Laine", "Kava, nešto pojesti i malo odmora.", "☕"],
+                        ["", "Brighton Seafront", "Ako se pojavi dobar sladoled – obavezno. 😄", "🍦"]
                     ]
                 }
-
             ]
         },
 
@@ -285,7 +340,6 @@ function showPlan() {
             title: "Muzeji • King's Cross • Camden",
             icon: "🏛️",
             sections: [
-
                 {
                     title: "🎯 GLAVNO",
                     places: [
@@ -297,7 +351,6 @@ function showPlan() {
                         ["", "Camden Market", "Market, trgovine, hrana i atmosfera.", "🛍️"]
                     ]
                 },
-
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
@@ -306,7 +359,6 @@ function showPlan() {
                         ["", "Camden Market", "Vintage, kolekcionarske stvari i sitnice.", "🎁"]
                     ]
                 }
-
             ]
         },
 
@@ -315,19 +367,18 @@ function showPlan() {
             title: "Tower • City • Harry Potter • Sky Garden",
             icon: "🏰",
             sections: [
-
                 {
                     title: "🎯 GLAVNO",
                     places: [
                         ["Jutro", "Tower of London", "Jedna od glavnih londonskih znamenitosti.", "🏰"],
                         ["", "Tower Bridge", "Šetnja preko mosta i pogled na Temzu.", "🌉"],
                         ["", "Leadenhall Market", "Harry Potter lokacija.", "🧙"],
+                        ["", "Horizon 22", "Besplatni vidikovac na 58. katu – potrebna rezervacija.", "🌇"],
                         ["", "St Paul's Cathedral", "Katedrala i okolica.", "⛪"],
                         ["", "Millennium Bridge", "Harry Potter lokacija i pogled prema St Paul'su.", "🌉"],
                         ["Kasnije", "Sky Garden", "Pogled na London – idealno predvečer.", "🌇"]
                     ]
                 },
-
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
@@ -335,122 +386,97 @@ function showPlan() {
                         ["", "F1 / modeli / kolekcionarske stvari", "Samo ako se nešto zanimljivo pojavi na ruti.", "🏎️"]
                     ]
                 }
-
             ]
         }
 
     ];
 
 
+    const day = itinerary[dayIndex];
+
+    if (!day) {
+        showPlan();
+        return;
+    }
+
+
     let html = `
         <div class="page-header">
-            <button class="back-button" onclick="showHome()">← Početna</button>
-            <h2>📅 Plan puta</h2>
-            <p>London • 09.10. – 14.10.2026.</p>
+
+            <button
+                class="back-button"
+                onclick="showPlan()">
+                ← Svi dani
+            </button>
+
+            <h2>${day.icon} ${day.title}</h2>
+
+            <p>${day.date}</p>
+
         </div>
     `;
 
 
-    itinerary.forEach((day, dayIndex) => {
+    day.sections.forEach((section) => {
 
         html += `
             <section class="day-card">
 
-                <div class="day-header">
-                    <div>
-                        <span class="day-date">${day.date}</span>
-                        <h3>${day.icon} ${day.title}</h3>
-                    </div>
-
-                    <span class="day-number">${dayIndex + 1}</span>
-                </div>
-        `;
-
-
-        day.sections.forEach((section) => {
-
-            html += `
                 <div class="plan-section-title">
                     ${section.title}
                 </div>
 
                 <div class="places">
-            `;
+        `;
 
 
-            section.places.forEach((place) => {
+        section.places.forEach((place, placeIndex) => {
 
-                const placeIndex =
-                    itinerary
-                        .slice(0, dayIndex)
-                        .reduce(
-                            (sum, d) =>
-                                sum +
-                                d.sections.reduce(
-                                    (s, sec) => s + sec.places.length,
-                                    0
-                                ),
-                            0
-                        )
-                    +
-                    day.sections
-                        .slice(0, day.sections.indexOf(section))
-                        .reduce(
-                            (sum, sec) => sum + sec.places.length,
-                            0
-                        )
-                    +
-                    section.places.indexOf(place);
+            const id =
+                `day-${dayIndex}-place-${placeIndex}`;
 
-                const id = `day-${dayIndex}-place-${placeIndex}`;
-
-                const checked =
-                    localStorage.getItem(id) === "true";
-
-
-                html += `
-                    <div class="place ${checked ? "visited" : ""}">
-
-                        <button
-                            class="check-button"
-                            onclick="toggleVisited('${id}', this)">
-                            ${checked ? "✓" : "○"}
-                        </button>
-
-                        <div class="place-icon">
-                            ${place[3]}
-                        </div>
-
-                        <div class="place-info">
-
-                            <div class="place-time">
-                                ${place[0]}
-                            </div>
-
-                            <strong>${place[1]}</strong>
-
-                            <p>${place[2]}</p>
-
-                        </div>
-
-                        <button
-                            class="map-button"
-                            onclick="openMaps('${place[1]}, London')">
-                            🗺️
-                        </button>
-
-                    </div>
-                `;
-            });
+            const checked =
+                localStorage.getItem(id) === "true";
 
 
             html += `
+                <div class="place ${checked ? "visited" : ""}">
+
+                    <button
+                        class="check-button"
+                        onclick="toggleVisited('${id}', this)">
+                        ${checked ? "✓" : "○"}
+                    </button>
+
+                    <div class="place-icon">
+                        ${place[3]}
+                    </div>
+
+                    <div class="place-info">
+
+                        <div class="place-time">
+                            ${place[0]}
+                        </div>
+
+                        <strong>${place[1]}</strong>
+
+                        <p>${place[2]}</p>
+
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place[1]}, London')">
+                        🗺️
+                    </button>
+
                 </div>
             `;
         });
 
 
         html += `
+                </div>
             </section>
         `;
     });
@@ -464,8 +490,6 @@ function showPlan() {
         behavior: "smooth"
     });
 }
-
-
 // -------------------------
 // OBIĐENO
 // -------------------------
