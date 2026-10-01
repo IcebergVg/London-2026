@@ -821,6 +821,139 @@ function showTrips() {
         behavior: "smooth"
     });
 }
+function showMuseums() {
+
+    const container = document.querySelector(".container");
+
+    const sections = [
+        {
+            title: "🛍️ CAMDEN MARKET",
+            subtitle: "10:00–12:15",
+            places: [
+                ["", "Camden Market", "Jutarnja šetnja kroz market, Stables i Camden Lock.", "🛍️"],
+                ["", "Camden Stables", "Pogledati trgovine, vintage i zanimljive sitnice.", "🏪"],
+                ["", "Camden Lock", "Kratka šetnja uz kanal i malo atmosfere.", "🌊"],
+                ["", "UMusic Shop Camden", "Pogledati ploče ako nam je usput – bez posebnog zadržavanja.", "💿"]
+            ]
+        },
+        {
+            title: "⚡ KING'S CROSS",
+            subtitle: "13:00–14:00",
+            places: [
+                ["", "Platform 9¾", "Obavezna fotografija i Harry Potter Shop.", "🧙"],
+                ["", "Harry Potter Shop", "Kratko pogledati trgovinu.", "🪄"],
+                ["", "King's Cross Station", "Prošetati glavnim dijelom stanice.", "🚂"],
+                ["", "St Pancras", "Pogledati kolodvor i arhitekturu.", "🏛️"]
+            ]
+        },
+        {
+            title: "🦖 NATURAL HISTORY MUSEUM",
+            subtitle: "14:30–16:00 • OBAVEZNO",
+            places: [
+                ["", "Hintze Hall", "Glavni atrij i poznati veliki eksponati.", "🦕"],
+                ["", "Dinosaurs", "Dinosaurusi i T. rex.", "🦖"],
+                ["", "Blue Whale", "Ogromni kostur plavog kita.", "🐋"],
+                ["", "Earth Hall", "Velika Zemljina kugla i geološki dio.", "🌍"],
+                ["", "Sophie the Stegosaurus", "Jedan od zanimljivih eksponata u dinosaurima.", "🦴"]
+            ]
+        },
+        {
+            title: "🚀 SCIENCE MUSEUM",
+            subtitle: "16:00–17:30",
+            places: [
+                ["", "Flight", "Avioni i povijest zrakoplovstva – posebno zanimljivo.", "✈️"],
+                ["", "Exploring Space", "Svemir, rakete i svemirska tehnologija.", "🚀"],
+                ["", "Energy Hall", "Veliki povijesni strojevi i tehnologija.", "⚙️"],
+                ["", "Making the Modern World", "Tehnologija, izumi i razvoj modernog svijeta.", "🔧"]
+            ]
+        },
+        {
+            title: "☕ PAUZA / VEČER",
+            subtitle: "Od 17:30",
+            places: [
+                ["", "South Kensington", "Kava, nešto pojesti i kratki odmor.", "☕"],
+                ["", "South Kensington", "Ako imamo još energije – nastavljamo dalje s večernjim planom.", "🌆"]
+            ]
+        }
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🏛️ Muzeji</h2>
+            <p>Ponedjeljak • 12.10.2026.</p>
+        </div>
+    `;
+
+    sections.forEach((section, sectionIndex) => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <span class="day-date">${section.subtitle}</span>
+                        <h3>${section.title}</h3>
+                    </div>
+
+                    <span class="day-number">${sectionIndex + 1}</span>
+                </div>
+
+                <div class="places">
+        `;
+
+        section.places.forEach((place, placeIndex) => {
+
+            const id = `museum-${sectionIndex}-place-${placeIndex}`;
+            const checked = localStorage.getItem(id) === "true";
+
+            html += `
+                <div class="place ${checked ? "visited" : ""}">
+
+                    <button
+                        class="check-button"
+                        onclick="toggleVisited('${id}', this)">
+                        ${checked ? "✓" : "○"}
+                    </button>
+
+                    <div class="place-icon">${place[3]}</div>
+
+                    <div class="place-info">
+
+                        <div class="place-time">
+                            ${place[0]}
+                        </div>
+
+                        <strong>${place[1]}</strong>
+
+                        <p>${place[2]}</p>
+
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place[1]}')">
+                        🗺️
+                    </button>
+
+                </div>
+            `;
+
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 // -----------------------
 // BUDŽET
 // -----------------------
