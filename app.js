@@ -613,6 +613,190 @@ function showRecords() {
         behavior: "smooth"
     });
 }
+function showTrips() {
+
+    const container = document.querySelector(".container");
+
+    const trips = [
+
+        {
+            title: "Brighton",
+            icon: "🌊",
+            subtitle: "Nedjelja • 11.10.2026. • cijeli dan",
+
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["", "Brighton Palace Pier", "Šetnja po Pieru i pogled na more.", "🎡"],
+                        ["", "Brighton Seafront", "Lagano uz more, plaža i atmosfera Brightona.", "🌊"],
+                        ["", "The Lanes", "Uske ulice, trgovine, kafići i atmosfera.", "🏘️"],
+                        ["", "Royal Pavilion", "Jedna od glavnih znamenitosti Brightona.", "🏛️"],
+                        ["", "Pavilion Gardens", "Lijepa pauza i šetnja oko Royal Paviliona.", "🌳"],
+                        ["", "North Laine", "Retro, vintage, male trgovine i zanimljivi dućani.", "🛍️"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Rarekind Records", "Pogledati rabljene ploče ako se uklapa u šetnju.", "💿"],
+                        ["", "Resident Music", "Glazba i vinili u North Laine području.", "💿"],
+                        ["", "Snoopers Paradise", "Veliki vintage i antique shop – idealno za razgledavanje.", "🕰️"],
+                        ["", "North Laine Bazaar", "Vintage, kolekcionarske stvari i razne sitnice.", "🎁"],
+                        ["", "Beyond Retro", "Vintage trgovina u blizini North Lainea.", "👕"]
+                    ]
+                },
+
+                {
+                    title: "🍦 PAUZA / NEŠTO FINO",
+                    places: [
+                        ["", "North Laine", "Kava, nešto pojesti i malo odmora.", "☕"],
+                        ["", "Brighton Seafront", "Ako se pojavi dobar sladoled – obavezno. 😄", "🍦"]
+                    ]
+                }
+
+            ]
+        },
+
+        {
+            title: "Windsor",
+            icon: "🏰",
+            subtitle: "Rezervna opcija • oko 5–7 sati",
+
+            sections: [
+
+                {
+                    title: "🎯 GLAVNO",
+                    places: [
+                        ["", "Windsor Castle", "Glavna znamenitost i razlog dolaska.", "🏰"],
+                        ["", "Windsor Town Centre", "Šetnja kroz centar i glavne ulice.", "🏘️"],
+                        ["", "The Long Walk", "Poznata šetnja prema Windsor Castleu.", "🌳"],
+                        ["", "River Thames", "Šetnja uz rijeku ako ostane vremena.", "🌊"]
+                    ]
+                },
+
+                {
+                    title: "🎁 AKO SI VEĆ OVDJE",
+                    places: [
+                        ["", "Eton", "Preko rijeke – opcija ako imate dovoljno vremena.", "🏫"],
+                        ["", "Windsor vintage & antique shops", "Pogledati ako naletimo na nešto zanimljivo.", "🕰️"]
+                    ]
+                },
+
+                {
+                    title: "☕ PAUZA",
+                    places: [
+                        ["", "Windsor Town Centre", "Kava, ručak ili pub prije povratka u London.", "☕"]
+                    ]
+                }
+
+            ]
+        }
+
+    ];
+
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🚌 Izleti</h2>
+            <p>Izleti iz Londona • glavno + što je zanimljivo u blizini</p>
+        </div>
+    `;
+
+
+    trips.forEach((trip) => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <h3>${trip.icon} ${trip.title}</h3>
+                        <p>${trip.subtitle}</p>
+                    </div>
+                </div>
+        `;
+
+
+        trip.sections.forEach((section) => {
+
+            html += `
+                <div class="plan-section-title">
+                    ${section.title}
+                </div>
+
+                <div class="places">
+            `;
+
+
+            section.places.forEach((place, placeIndex) => {
+
+                const id =
+                    `trip-${trip.title.toLowerCase().replace(/\s+/g, "-")}-${placeIndex}`;
+
+                const checked =
+                    localStorage.getItem(id) === "true";
+
+
+                html += `
+                    <div class="place ${checked ? "visited" : ""}">
+
+                        <button
+                            class="check-button"
+                            onclick="toggleVisited('${id}', this)">
+                            ${checked ? "✓" : "○"}
+                        </button>
+
+                        <div class="place-icon">
+                            ${place[3]}
+                        </div>
+
+                        <div class="place-info">
+
+                            <div class="place-time">
+                                ${place[0]}
+                            </div>
+
+                            <strong>${place[1]}</strong>
+
+                            <p>${place[2]}</p>
+
+                        </div>
+
+                        <button
+                            class="map-button"
+                            onclick="openMaps('${place[1]}, London')">
+                            🗺️
+                        </button>
+
+                    </div>
+                `;
+            });
+
+
+            html += `
+                </div>
+            `;
+        });
+
+
+        html += `
+            </section>
+        `;
+    });
+
+
+    container.innerHTML = html;
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 // -----------------------
 // BUDŽET
 // -----------------------
