@@ -1,15 +1,12 @@
 const itinerary = [
     {
         date: "PET 09.10.",
-        title: "Dolazak u London",
+        title: "Dolazak – bez plana",
         icon: "✈️",
         places: [
             ["15:20", "Heathrow Airport", "Dolazak u London", "✈️"],
-            ["poslijepodne", "Elizabeth Line", "Heathrow → centralni London", "🚆"],
-            ["večer", "Soho", "Lagano upoznavanje s centrom Londona", "📍"],
-            ["večer", "Chinatown", "Obavezna stanica 😁", "🍜"],
-            ["večer", "Piccadilly Circus", "Kratka šetnja i atmosfera", "📍"],
-            ["večer", "Neal's Yard", "Ako bude vremena i energije", "📍"]
+            ["poslijepodne", "Odlazak prema Londonu", "Smještaj kod bratića i odmor", "🏠"],
+            ["večer", "Kratka šetnja / večera", "Ako bude volje nakon puta", "🍽️"]
         ]
     },
 
@@ -18,8 +15,8 @@ const itinerary = [
         title: "Portobello & Notting Hill",
         icon: "🛍️",
         places: [
-            ["09:00", "Portobello Road Market", "Glavni cilj dana – subota je pravi dan za Portobello", "🛍️"],
-            ["prijepodne", "Notting Hill", "Šetnja ulicama i razgledavanje", "🏘️"],
+            ["ujutro", "Portobello Road Market", "Glavni cilj dana – subota je pravi dan za Portobello", "🛍️"],
+            ["dan", "Notting Hill", "Šetnja Portobello Roadom i okolnim ulicama", "🏘️"],
             ["po želji", "Holland Park", "Mogući dodatak ako bude vremena", "🌳"],
             ["večer", "Soho / pub", "Slobodna večer", "🍺"]
         ]
@@ -27,45 +24,44 @@ const itinerary = [
 
     {
         date: "NED 11.10.",
-        title: "Brighton",
-        icon: "🌊",
+        title: "Camden + King's Cross + centar",
+        icon: "🛍️",
         places: [
-            ["jutro", "London → Brighton", "Jednodnevni izlet", "🚆"],
-            ["dan", "Brighton Pier", "More, šetnja i poznati Brighton Pier", "🌊"],
-            ["dan", "The Lanes", "Stari dio grada, trgovine i atmosfera", "🏘️"],
-            ["poslijepodne", "Brighton Seafront", "Šetnja uz more", "🏖️"],
-            ["večer", "Brighton → London", "Povratak u London", "🚆"]
+            ["ujutro", "Camden Market", "Glavni cilj – tržnica, atmosfera i šetnja", "🛍️"],
+            ["prijepodne", "Camden Town", "Šetnja i razgledavanje kvarta", "🚶"],
+            ["poslijepodne", "King's Cross / Platform 9¾", "Obavezna Harry Potter fotografija", "⚡"],
+            ["poslijepodne", "St Pancras", "Kratko razgledavanje", "🚉"],
+            ["kasnije", "Covent Garden", "Šetnja i atmosfera", "🏛️"],
+            ["večer", "Neal's Yard & Chinatown", "Neal's Yard i obavezni Chinatown", "🍜"]
         ]
     },
 
     {
         date: "PON 12.10.",
-        title: "Muzeji + Harry Potter + Camden",
-        icon: "🏛️",
+        title: "Brighton – cijeli dan",
+        icon: "🌊",
         places: [
-            ["jutro", "Natural History Museum", "Glavni muzejski cilj", "🏛️"],
-            ["kasnije", "Science Museum", "Odmah preko puta", "🔬"],
-            ["poslijepodne", "King's Cross", "Platform 9¾ – obavezna fotografija", "🧙"],
-            ["poslijepodne", "St Pancras", "Kratko razgledavanje", "🚉"],
-            ["kasnije", "Camden Market", "Tržnica i večernja atmosfera", "🛍️"]
+            ["ujutro", "London → Brighton", "Jednodnevni izlet vlakom", "🚆"],
+            ["dan", "Brighton Pier", "Glavna atrakcija i šetnja uz more", "🌊"],
+            ["dan", "The Lanes", "Stari dio grada, trgovine i atmosfera", "🏘️"],
+            ["poslijepodne", "Royal Pavilion", "Razgledavanje izvana / po želji ulazak", "🏛️"],
+            ["poslijepodne", "North Laine", "Šetnja, vintage i neobične trgovine", "🛍️"],
+            ["večer", "Brighton → London", "Povratak u London", "🚆"]
         ]
     },
 
     {
         date: "UTO 13.10.",
-        title: "City + Sky Garden + ploče",
-        icon: "🌇",
+        title: "Tower + City of London",
+        icon: "🏙️",
         places: [
-            ["jutro", "Tower of London", "Vani ili unutra, ovisno o vremenu", "🏰"],
-            ["jutro", "Tower Bridge", "Šetnja preko mosta", "🌉"],
-            ["prijepodne", "Leadenhall Market", "Harry Potter lokacija", "🧙"],
-            ["podne", "St Paul's Cathedral", "Razgledavanje izvana", "⛪"],
-            ["podne", "Millennium Bridge", "Još jedna Harry Potter lokacija", "🧙"],
-            ["kasno poslijepodne", "Sky Garden", "Pogled na London – idealno pred zalazak", "🌇"],
-            ["večer", "Sister Ray", "Record shop", "🎵"],
-            ["večer", "Reckless Records", "Record shop", "🎵"],
-            ["večer", "St Martins Models", "Modeli autića – Cecil Court", "🚗"],
-            ["večer", "Chinatown / Soho", "Zadnja večer u Londonu", "🍜"]
+            ["ujutro", "Tower of London", "Glavni cilj dana", "🏰"],
+            ["prijepodne", "Tower Bridge", "Šetnja i fotografiranje", "🌉"],
+            ["oko podne", "Leadenhall Market", "Harry Potter lokacija", "⚡"],
+            ["poslijepodne", "Horizon 22", "Besplatni vidikovac – rezervacija termina", "🌆"],
+            ["poslijepodne", "St Paul's Cathedral", "Razgledavanje izvana", "⛪"],
+            ["kasnije", "Millennium Bridge", "Harry Potter lokacija", "⚡"],
+            ["predvečer", "Sky Garden", "Panorama Londona", "🌆"]
         ]
     },
 
@@ -74,8 +70,8 @@ const itinerary = [
         title: "Povratak",
         icon: "✈️",
         places: [
-            ["rano jutro", "London → Heathrow", "Let u 08:40", "🚆"],
-            ["08:40", "Heathrow Airport", "✈️ Povratak kući", "✈️"]
+            ["rano ujutro", "London → Heathrow", "Odlazak prema aerodromu", "🚆"],
+            ["08:40", "Let za povratak", "Polazak iz Heathrowa", "✈️"]
         ]
     }
 ];
