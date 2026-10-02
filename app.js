@@ -295,67 +295,78 @@ function showDay(dayIndex) {
             ]
         },
 
+      {
+    date: "Nedjelja • 11.10.",
+    title: "Camden + King's Cross + centar",
+    icon: "🛍️",
+    sections: [
         {
-            date: "Nedjelja • 11.10.",
-            title: "Brighton",
-            icon: "🌊",
-            sections: [
-                {
-                    title: "🎯 GLAVNO",
-                    places: [
-                        ["Jutro", "Brighton", "Cijeli dan izlet – bez žurbe.", "🌊"],
-                        ["", "Brighton Palace Pier", "Šetnja po Pieru i pogled na more.", "🎡"],
-                        ["", "The Lanes", "Uske ulice, trgovine i atmosfera.", "🏘️"],
-                        ["", "Royal Pavilion", "Jedna od glavnih znamenitosti Brightona.", "🏛️"],
-                        ["", "Pavilion Gardens", "Odmor i šetnja.", "🌳"],
-                        ["", "Brighton Seafront", "Šetnja uz more.", "🌊"]
-                    ]
-                },
-                {
-                    title: "🎁 AKO SI VEĆ OVDJE",
-                    places: [
-                        ["", "Rarekind Records", "Pogledati ploče ako se uklapa u šetnju.", "💿"],
-                        ["", "Resident Music", "Glazba i vinili u North Laine području.", "💿"],
-                        ["", "Snoopers Paradise", "Vintage i second-hand – bonus.", "🕰️"],
-                        ["", "North Laine Bazaar", "Vintage, kolekcionarske stvari i sitnice.", "🎁"]
-                    ]
-                },
-                {
-                    title: "🍦 PAUZA / NEŠTO FINO",
-                    places: [
-                        ["", "North Laine", "Kava, nešto pojesti i malo odmora.", "☕"],
-                        ["", "Brighton Seafront", "Ako se pojavi dobar sladoled – obavezno. 😄", "🍦"]
-                    ]
-                }
+            title: "🎯 GLAVNO",
+            places: [
+                ["ujutro", "Camden Market", "Tržnica, atmosfera, šetnja i razgledavanje.", "🛍️"],
+                ["prijepodne", "Camden Town", "Šetnja i razgledavanje kvarta.", "🚶"],
+                ["poslijepodne", "King's Cross / Platform 9¾", "Obavezna Harry Potter fotografija.", "⚡"],
+                ["poslijepodne", "St Pancras", "Kratko razgledavanje.", "🚉"],
+                ["kasnije", "Covent Garden", "Šetnja i atmosfera.", "🏛️"],
+                ["večer", "Neal's Yard & Chinatown", "Neal's Yard i obavezni Chinatown.", "🍜"]
             ]
         },
+        {
+            title: "🎁 AKO SMO VEĆ OVDJE",
+            places: [
+                ["", "UMusic Shop", "Vinyl • glazba • merch.", "💿"],
+                ["", "Moon Jelly Records", "Vinyl • Stables Market.", "💿"],
+                ["", "Kozmic Records", "Vinyl • Hawley Wharf.", "💿"],
+                ["", "TK Maxx", "Ako naletimo na povoljne modele.", "🚗"],
+                ["", "Hamleys", "Ako smo već u blizini – pogledati modele.", "🎁"]
+            ]
+        },
+        {
+            title: "☕ PAUZA",
+            places: [
+                ["", "Chinatown", "Hrana, piće i malo odmora.", "🍜"]
+            ]
+        }
+    ]
+},
 
+      {
+    date: "Ponedjeljak • 12.10.",
+    title: "Brighton – cijeli dan",
+    icon: "🌊",
+    sections: [
         {
-            date: "Ponedjeljak • 12.10.",
-            title: "Muzeji • King's Cross • Camden",
-            icon: "🏛️",
-            sections: [
-                {
-                    title: "🎯 GLAVNO",
-                    places: [
-                        ["Jutro", "Natural History Museum", "Jedan od glavnih londonskih muzeja.", "🦖"],
-                        ["", "Science Museum", "Znanost, tehnologija i svemir.", "🚀"],
-                        ["Popodne", "King's Cross", "Postaja i područje oko nje.", "🚂"],
-                        ["", "Platform 9¾", "Obavezna Harry Potter foto-točka.", "🧙"],
-                        ["", "St Pancras", "Pogledati prekrasnu postaju.", "🏛️"],
-                        ["", "Camden Market", "Market, trgovine, hrana i atmosfera.", "🛍️"]
-                    ]
-                },
-                {
-                    title: "🎁 AKO SI VEĆ OVDJE",
-                    places: [
-                        ["", "Camden High Street", "Pogledati trgovine i street style.", "🛍️"],
-                        ["", "UMusic Shop Camden", "Glazba – bonus ako se uklapa.", "💿"],
-                        ["", "Camden Market", "Vintage, kolekcionarske stvari i sitnice.", "🎁"]
-                    ]
-                }
+            title: "🎯 GLAVNO",
+            places: [
+                ["ujutro", "London → Brighton", "Jednodnevni izlet vlakom.", "🚆"],
+                ["dan", "Brighton Pier", "Glavna atrakcija i šetnja uz more.", "🌊"],
+                ["dan", "The Lanes", "Stari dio grada, trgovine i atmosfera.", "🏘️"],
+                ["poslijepodne", "Royal Pavilion", "Razgledavanje izvana / po želji ulazak.", "🏛️"],
+                ["poslijepodne", "North Laine", "Šetnja, vintage i neobične trgovine.", "🛍️"]
             ]
         },
+        {
+            title: "🎁 AKO SMO VEĆ OVDJE",
+            places: [
+                ["", "Rarekind Records", "Vinyl • The Lanes.", "💿"],
+                ["", "Snoopers Paradise", "Vintage • pokloni • neobične stvari.", "🎁"],
+                ["", "North Laine", "Second-hand • vintage • ako naletimo na modele.", "🚗"]
+            ]
+        },
+        {
+            title: "☕ PAUZA",
+            places: [
+                ["", "Brighton Seafront", "Ako se pojavi dobar sladoled – obavezno. 😄", "🍦"]
+            ]
+        },
+        {
+            title: "🚆 POVRATAK",
+            places: [
+                ["večer", "Brighton → London", "Povratak u London.", "🚆"]
+            ]
+        }
+    ]
+},
 
         {
             date: "Utorak • 13.10.",
