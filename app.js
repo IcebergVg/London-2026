@@ -1031,6 +1031,96 @@ function showMuseums() {
         behavior: "smooth"
     });
 }
+function showMarkets() {
+
+    const container = document.querySelector(".container");
+
+    const sections = [
+        {
+            title: "🎯 VEĆ U PLANU",
+            places: [
+                ["subota", "Portobello Road Market", "Glavna tržnica našeg subotnjeg dana.", "🛍️"],
+                ["nedjelja", "Camden Market", "Glavna tržnica našeg nedjeljnog dana.", "🛍️"],
+                ["nedjelja", "Covent Garden", "Šetnja, trgovine i atmosfera.", "🏛️"],
+                ["utorak", "Leadenhall Market", "Harry Potter filmska lokacija – ionako smo u Cityju.", "⚡"]
+            ]
+        },
+        {
+            title: "⭐ VRIJEDI RAZMOTRITI",
+            places: [
+                ["", "Borough Market", "Hrana, street food i atmosfera uz London Bridge.", "🍴"],
+                ["", "Spitalfields Market", "Hrana, trgovine, moda i vintage.", "🛍️"],
+                ["", "Greenwich Market", "Rukotvorine, antikviteti, pokloni i hrana.", "⚓"],
+                ["", "Brick Lane Market", "Vintage, second-hand i ulična atmosfera.", "🎨"]
+            ]
+        },
+        {
+            title: "🌊 BRIGHTON",
+            places: [
+                ["ponedjeljak", "North Laine", "Vintage, second-hand, male trgovine i neobične stvari.", "🛍️"],
+                ["ponedjeljak", "North Laine Bazaar", "Vintage i kolekcionarske stvari ako naletimo.", "🎁"]
+            ]
+        }
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🛍️ Tržnice</h2>
+            <p>London • opcije za obilazak u hodu</p>
+        </div>
+    `;
+
+    sections.forEach((section) => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <h3>${section.title}</h3>
+                    </div>
+                </div>
+
+                <div class="places">
+        `;
+
+        section.places.forEach((place) => {
+
+            html += `
+                <div class="place">
+
+                    <div class="place-icon">${place[3]}</div>
+
+                    <div class="place-info">
+                        <strong>${place[1]}</strong>
+                        <p>${place[0] ? place[0] + " • " : ""}${place[2]}</p>
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place[1]}, London')">
+                        🗺️
+                    </button>
+
+                </div>
+            `;
+
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    container.innerHTML = html;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 function showStores() {
 
     const container = document.querySelector(".container");
