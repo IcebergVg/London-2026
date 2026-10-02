@@ -937,52 +937,38 @@ function showMuseums() {
 
     const sections = [
         {
-            title: "🛍️ CAMDEN MARKET",
-            subtitle: "10:00–12:15",
+            title: "🦖 VEĆ U PLANU",
             places: [
-                ["", "Camden Market", "Jutarnja šetnja kroz market, Stables i Camden Lock.", "🛍️"],
-                ["", "Camden Stables", "Pogledati trgovine, vintage i zanimljive sitnice.", "🏪"],
-                ["", "Camden Lock", "Kratka šetnja uz kanal i malo atmosfere.", "🌊"],
-                ["", "UMusic Shop Camden", "Pogledati ploče ako nam je usput – bez posebnog zadržavanja.", "💿"]
+                ["subota", "Natural History Museum", "Već je u rasporedu – South Kensington.", "🦖"],
+                ["subota", "Science Museum", "Već je u rasporedu – South Kensington.", "🚀"]
             ]
         },
         {
-            title: "⚡ KING'S CROSS",
-            subtitle: "13:00–14:00",
+            title: "⭐ VRIJEDI RAZMOTRITI",
             places: [
-                ["", "Platform 9¾", "Obavezna fotografija i Harry Potter Shop.", "🧙"],
-                ["", "Harry Potter Shop", "Kratko pogledati trgovinu.", "🪄"],
-                ["", "King's Cross Station", "Prošetati glavnim dijelom stanice.", "🚂"],
-                ["", "St Pancras", "Pogledati kolodvor i arhitekturu.", "🏛️"]
+                ["", "Imperial War Museum", "Ratna povijest od Prvog svjetskog rata nadalje. Besplatan ulaz.", "🎖️"],
+                ["", "British Museum", "Drevne civilizacije, Egipat, Grčka i Rim. Besplatan stalni postav.", "🏺"],
+                ["", "V&A – Victoria and Albert Museum", "Umjetnost, dizajn, moda i zanimljivi predmeti.", "🎨"],
+                ["", "Tate Modern", "Moderna i suvremena umjetnost.", "🖼️"],
+                ["", "London Transport Museum", "Povijest londonskog prijevoza i stari autobusi.", "🚇"],
+                ["", "National Maritime Museum", "Pomorstvo i britanska pomorska povijest – Greenwich.", "⚓"]
             ]
         },
         {
-            title: "🦖 NATURAL HISTORY MUSEUM",
-            subtitle: "14:30–16:00 • OBAVEZNO",
+            title: "💷 PLAĆENI / PO ŽELJI",
             places: [
-                ["", "Hintze Hall", "Glavni atrij i poznati veliki eksponati.", "🦕"],
-                ["", "Dinosaurs", "Dinosaurusi i T. rex.", "🦖"],
-                ["", "Blue Whale", "Ogromni kostur plavog kita.", "🐋"],
-                ["", "Earth Hall", "Velika Zemljina kugla i geološki dio.", "🌍"],
-                ["", "Sophie the Stegosaurus", "Jedan od zanimljivih eksponata u dinosaurima.", "🦴"]
+                ["", "Churchill War Rooms", "Podzemni ratni kabinet i Churchillovo ratno sjedište.", "🎖️"],
+                ["", "HMS Belfast", "Povijesni ratni brod na Temzi.", "⚓"]
             ]
         },
         {
-            title: "🚀 SCIENCE MUSEUM",
-            subtitle: "16:00–17:30",
+            title: "🔎 JOŠ NEKE IDEJE",
             places: [
-                ["", "Flight", "Avioni i povijest zrakoplovstva – posebno zanimljivo.", "✈️"],
-                ["", "Exploring Space", "Svemir, rakete i svemirska tehnologija.", "🚀"],
-                ["", "Energy Hall", "Veliki povijesni strojevi i tehnologija.", "⚙️"],
-                ["", "Making the Modern World", "Tehnologija, izumi i razvoj modernog svijeta.", "🔧"]
-            ]
-        },
-        {
-            title: "☕ PAUZA / VEČER",
-            subtitle: "Od 17:30",
-            places: [
-                ["", "South Kensington", "Kava, nešto pojesti i kratki odmor.", "☕"],
-                ["", "South Kensington", "Ako imamo još energije – nastavljamo dalje s večernjim planom.", "🌆"]
+                ["", "National Gallery", "Velika zbirka europske umjetnosti na Trafalgar Squareu.", "🖼️"],
+                ["", "National Portrait Gallery", "Portreti poznatih Britanaca i britanske povijesti.", "👤"],
+                ["", "Design Museum", "Dizajn, tehnologija i suvremeni predmeti.", "💡"],
+                ["", "Museum of Brands", "Povijest proizvoda, ambalaže i reklama.", "📦"],
+                ["", "Sir John Soane's Museum", "Neobična kuća-muzej s umjetninama i kolekcijama.", "🏛️"]
             ]
         }
     ];
@@ -991,58 +977,39 @@ function showMuseums() {
         <div class="page-header">
             <button class="back-button" onclick="showHome()">← Početna</button>
             <h2>🏛️ Muzeji</h2>
-            <p>Ponedjeljak • 12.10.2026.</p>
+            <p>Ideje za posjet u hodu</p>
         </div>
     `;
 
-    sections.forEach((section, sectionIndex) => {
+    sections.forEach((section) => {
 
         html += `
             <section class="day-card">
 
                 <div class="day-header">
                     <div>
-                        <span class="day-date">${section.subtitle}</span>
                         <h3>${section.title}</h3>
                     </div>
-
-                    <span class="day-number">${sectionIndex + 1}</span>
                 </div>
 
                 <div class="places">
         `;
 
-        section.places.forEach((place, placeIndex) => {
-
-            const id = `museum-${sectionIndex}-place-${placeIndex}`;
-            const checked = localStorage.getItem(id) === "true";
+        section.places.forEach((place) => {
 
             html += `
-                <div class="place ${checked ? "visited" : ""}">
-
-                    <button
-                        class="check-button"
-                        onclick="toggleVisited('${id}', this)">
-                        ${checked ? "✓" : "○"}
-                    </button>
+                <div class="place">
 
                     <div class="place-icon">${place[3]}</div>
 
                     <div class="place-info">
-
-                        <div class="place-time">
-                            ${place[0]}
-                        </div>
-
                         <strong>${place[1]}</strong>
-
-                        <p>${place[2]}</p>
-
+                        <p>${place[0] ? place[0] + " • " : ""}${place[2]}</p>
                     </div>
 
                     <button
                         class="map-button"
-                        onclick="openMaps('${place[1]}')">
+                        onclick="openMaps('${place[1]}, London')">
                         🗺️
                     </button>
 
@@ -1063,7 +1030,7 @@ function showMuseums() {
         top: 0,
         behavior: "smooth"
     });
-}
+}}
 function showStores() {
 
     const container = document.querySelector(".container");
