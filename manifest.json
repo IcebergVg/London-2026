@@ -1,0 +1,11 @@
+{
+  "name": "London 2026",
+  "short_name": "London 2026",
+  "description": "Plan puta za London 09.10. – 14.10.2026.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0f1115",
+  "theme_color": "#0f1115",
+  "orientation": "portrait",
+  "lang": "hr"
+}
