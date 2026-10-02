@@ -287,26 +287,7 @@ function showDay(dayIndex) {
         }
     ]
 },
-                {
-                    title: "🎁 AKO SI VEĆ OVDJE",
-                    places: [
-                        ["", "Honest Jon's", "Record shop – ako ti se gleda po pločama.", "💿"],
-                        ["", "Lion Records", "Vinili u Portobello području.", "💿"],
-                        ["", "Firebird Records", "Još jedna mogućnost za ploče.", "💿"],
-                        ["", "Rough Trade West", "Record shop u Notting Hillu.", "💿"],
-                        ["", "Portobello vintage trgovine", "Pogledati kolekcionarske stvari i igračke.", "🚗"]
-                    ]
-                },
-                {
-                    title: "☕ PAUZA / AKO OSTANE VREMENA",
-                    places: [
-                        ["", "Portobello Road", "Street food, kava i nešto pojesti.", "☕"],
-                        ["", "Holland Park", "Samo ako ostane energije.", "🌳"]
-                    ]
-                }
-            ]
-        },
-
+            
       {
     date: "Nedjelja • 11.10.",
     title: "Camden + King's Cross + centar",
