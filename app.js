@@ -110,7 +110,7 @@ function showHome() {
     <small>Ploče • Autići • Pokloni</small>
 </button>
 
-            <button class="menu-card" onclick="comingSoon('Tržnice')">
+            <button class="menu-card" onclick="showMarkets()">
                 <span>🛍️</span>
                 <strong>Tržnice</strong>
                 <small>Portobello, Camden...</small>
