@@ -131,13 +131,7 @@ function showHome() {
                 <strong>Muzeji</strong>
                 <small>Natural History, Science...</small>
             </button>
-
-            <button class="menu-card" onclick="comingSoon('Modeli autića')">
-                <span>🚗</span>
-                <strong>Modeli autića</strong>
-                <small>Shopovi i modeli</small>
-            </button>
-
+          
             <button class="menu-card" onclick="showTrips()">
                 <span>✈️</span>
                 <strong>Izleti</strong>
