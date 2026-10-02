@@ -131,7 +131,11 @@ function showHome() {
                 <strong>Muzeji</strong>
                 <small>Natural History, Science...</small>
             </button>
-          
+          <button class="menu-card" onclick="showLondonMap()">
+    <span>🗺️</span>
+    <strong>Karta Londona</strong>
+    <small>Kvartovi i točke</small>
+</button>
             <button class="menu-card" onclick="showTrips()">
                 <span>✈️</span>
                 <strong>Izleti</strong>
@@ -809,6 +813,31 @@ function showTrips() {
 
     container.innerHTML = html;
 
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+function showLondonMap() {
+
+    const container = document.querySelector(".container");
+
+    container.innerHTML = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>🗺️ Karta Londona</h2>
+            <p>Kvartovi i točke</p>
+        </div>
+
+        <div style="width: 100%; overflow: auto; border-radius: 16px;">
+            <img
+                src="london-map-2026.png"
+                alt="London 2026 - Kvartovi i točke"
+                style="width: 100%; height: auto; display: block; border-radius: 16px;"
+            >
+        </div>
+    `;
 
     window.scrollTo({
         top: 0,
