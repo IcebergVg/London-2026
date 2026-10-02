@@ -253,19 +253,40 @@ function showDay(dayIndex) {
 },
 
         {
-            date: "Subota • 10.10.",
-            title: "Portobello • Notting Hill",
-            icon: "🛍️",
-            sections: [
-                {
-                    title: "🎯 GLAVNO",
-                    places: [
-                        ["Jutro", "Portobello Road Market", "Glavni sadržaj dana – market, vintage, antikviteti i atmosfera.", "🛍️"],
-                        ["", "Portobello Green", "Kolekcionarske stvari i štandovi.", "🏺"],
-                        ["", "Notting Hill", "Šetnja kvartom.", "🏘️"],
-                        ["", "Westbourne Grove", "Lagani nastavak šetnje.", "🚶"]
-                    ]
-                },
+    date: "Subota • 10.10.",
+    title: "Portobello + Notting Hill + muzeji",
+    icon: "🛍️",
+    sections: [
+        {
+            title: "🎯 GLAVNO",
+            places: [
+                ["ujutro", "Portobello Road Market", "Glavni cilj dana – subota je pravi dan za Portobello.", "🛍️"],
+                ["oko podne", "Notting Hill", "Šetnja Portobello Roadom i okolnim ulicama.", "🏘️"],
+                ["14:00", "Natural History Museum", "Dinosauri, priroda i poznata glavna dvorana. Stalne galerije su besplatne.", "🦖"],
+                ["15:30", "Science Museum", "Znanost, tehnologija i poznati eksponati.", "🚀"]
+            ]
+        },
+        {
+            title: "🎁 AKO SMO VEĆ OVDJE",
+            places: [
+                ["", "Honest Jon's", "Vinyl • 278 Portobello Road.", "💿"],
+                ["", "Portobello Road Market", "Second-hand, vintage i ako naletimo na modele.", "🚗"]
+            ]
+        },
+        {
+            title: "☕ PAUZA",
+            places: [
+                ["", "South Kensington", "Kratka pauza između muzeja ili nakon njih.", "☕"]
+            ]
+        },
+        {
+            title: "🌙 VEČER",
+            places: [
+                ["večer", "Soho / pub", "Slobodna večer nakon dana u gradu.", "🍺"]
+            ]
+        }
+    ]
+},
                 {
                     title: "🎁 AKO SI VEĆ OVDJE",
                     places: [
