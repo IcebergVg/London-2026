@@ -116,7 +116,7 @@ function showHome() {
                 <small>Portobello, Camden...</small>
             </button>
 
-            <button class="menu-card" onclick="comingSoon('Harry Potter')">
+            <button class="menu-card" onclick="showHarryPotter()"">
                 <span>🧙</span>
                 <strong>Harry Potter</strong>
                 <small>Lokacije i Platform 9¾</small>
@@ -846,6 +846,92 @@ function showLondonMap() {
             >
         </div>
     `;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+function showHarryPotter() {
+
+    const container = document.querySelector(".container");
+
+    const sections = [
+        {
+            title: "🎯 GLAVNO",
+            places: [
+                ["nedjelja", "Platform 9¾ – King's Cross", "Obavezna Harry Potter fotografija.", "⚡"],
+                ["utorak", "Leadenhall Market", "Filmska lokacija iz Harry Pottera.", "⚡"],
+                ["utorak", "Millennium Bridge", "Filmska lokacija iz Harry Pottera.", "⚡"]
+            ]
+        },
+        {
+            title: "🏠 AKO SMO VEĆ OVDJE",
+            places: [
+                ["Soho", "House of MinaLima", "Grafički dizajn, printevi i Harry Potter.", "🎁"],
+                ["usput", "Harry Potter Shop", "Ako naletimo na trgovinu – pogledati bez posebnog obilaska.", "🪄"]
+            ]
+        },
+        {
+            title: "💷 PLAĆENO / PO ŽELJI",
+            places: [
+                ["", "Warner Bros. Studio Tour London", "Veliki Harry Potter Studio Tour – samo ako se predomislimo.", "🎬"]
+            ]
+        }
+    ];
+
+    let html = `
+        <div class="page-header">
+            <button class="back-button" onclick="showHome()">← Početna</button>
+            <h2>⚡ Harry Potter</h2>
+            <p>Lokacije i Platform 9¾</p>
+        </div>
+    `;
+
+    sections.forEach((section) => {
+
+        html += `
+            <section class="day-card">
+
+                <div class="day-header">
+                    <div>
+                        <h3>${section.title}</h3>
+                    </div>
+                </div>
+
+                <div class="places">
+        `;
+
+        section.places.forEach((place) => {
+
+            html += `
+                <div class="place">
+
+                    <div class="place-icon">${place[3]}</div>
+
+                    <div class="place-info">
+                        <strong>${place[1]}</strong>
+                        <p>${place[0]} • ${place[2]}</p>
+                    </div>
+
+                    <button
+                        class="map-button"
+                        onclick="openMaps('${place[1]}, London')">
+                        🗺️
+                    </button>
+
+                </div>
+            `;
+
+        });
+
+        html += `
+                </div>
+            </section>
+        `;
+    });
+
+    container.innerHTML = html;
 
     window.scrollTo({
         top: 0,
