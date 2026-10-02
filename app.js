@@ -1030,7 +1030,7 @@ function showMuseums() {
         top: 0,
         behavior: "smooth"
     });
-}}
+}
 function showStores() {
 
     const container = document.querySelector(".container");
