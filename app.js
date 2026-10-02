@@ -1470,27 +1470,5 @@ function showNotes() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-
-    const menuCards = document.querySelectorAll(".menu-card");
-
-    menuCards.forEach((card, index) => {
-
-        card.addEventListener("click", () => {
-
-        if (index === 0) {
-    showPlan();
-} else if (index === 2) {
-    showRecords();
-} else if (index === 8) {
-    showBudget();
-} else if (index === 9) {
-    showNotes();
-} else {
-    comingSoon(card.querySelector("strong").textContent);
-}
-
-        });
-
-    });
-
+    showHome();
 });
