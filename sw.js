@@ -1,4 +1,4 @@
-const CACHE_NAME = "london-2026-v1";
+const CACHE_NAME = "london-2026-v2";
 
 const FILES_TO_CACHE = [
     "./",
@@ -6,7 +6,9 @@ const FILES_TO_CACHE = [
     "./style.css",
     "./app.js",
     "./manifest.json",
-    "./london-map-2026.png"
+    "./london-map-2026.png",
+    "./icon-192.png",
+    "./icon-512.png"
 ];
 
 self.addEventListener("install", event => {
