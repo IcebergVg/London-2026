@@ -645,7 +645,7 @@ function showTrips() {
         {
             title: "Brighton",
             icon: "🌊",
-            subtitle: "Nedjelja • 11.10.2026. • cijeli dan",
+            subtitle: "Ponedjeljak • 12.10.2026. • cijeli dan",
 
             sections: [
 
