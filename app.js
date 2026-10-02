@@ -165,13 +165,14 @@ function showPlan() {
 
     const container = document.querySelector(".container");
 
-    const days = [
-        ["✈️", "Petak • 09.10.", "Soho • Chinatown • Neal's Yard"],
-        ["🛍️", "Subota • 10.10.", "Portobello • Notting Hill"],
-        ["🌊", "Nedjelja • 11.10.", "Brighton"],
-        ["🏛️", "Ponedjeljak • 12.10.", "Muzeji • King's Cross • Camden"],
-        ["🏰", "Utorak • 13.10.", "Tower • City • Harry Potter • Horizon 22 • Sky Garden"]
-    ];
+   const days = [
+    ["✈️", "Petak • 09.10.", "Dolazak – bez plana"],
+    ["🛍️", "Subota • 10.10.", "Portobello • Notting Hill"],
+    ["🛍️", "Nedjelja • 11.10.", "Camden • King's Cross • Covent Garden • Chinatown"],
+    ["🌊", "Ponedjeljak • 12.10.", "Brighton – cijeli dan"],
+    ["🏙️", "Utorak • 13.10.", "Tower • City • Harry Potter • Horizon 22 • Sky Garden"],
+    ["✈️", "Srijeda • 14.10.", "Povratak"]
+];
 
     let html = `
         <div class="page-header">
