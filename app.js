@@ -231,35 +231,26 @@ function showDay(dayIndex) {
 
     const itinerary = [
 
+       {
+    date: "Petak • 09.10.",
+    title: "Dolazak – bez plana",
+    icon: "✈️",
+    sections: [
         {
-            date: "Petak • 09.10.",
-            title: "Soho • Chinatown • Neal's Yard",
-            icon: "🌆",
-            sections: [
-                {
-                    title: "🎯 GLAVNO",
-                    places: [
-                        ["Popodne", "Soho", "Prva lagana šetnja Londonom nakon dolaska.", "🌆"],
-                        ["", "Berwick Street", "Poznata ulica u Sohou – usput pogledati što ima.", "🏙️"],
-                        ["", "Chinatown", "Prošetati bez žurbe i večera.", "🍜"],
-                        ["", "Neal's Yard", "Mali šareni trg kod Covent Gardena.", "🌈"],
-                        ["", "Seven Dials", "Nastavak šetnje ako bude vremena i energije.", "📍"]
-                    ]
-                },
-                {
-                    title: "🎁 AKO SI VEĆ OVDJE",
-                    places: [
-                        ["", "Reckless Records", "Rabljene ploče – pogledati ako ima vremena.", "💿"],
-                        ["", "Sister Ray", "Ploče, uključujući second-hand ponudu.", "💿"],
-                        ["", "Sounds of the Universe", "Glazba i vinili.", "💿"],
-                        ["", "Phonica Records", "Vinili i glazba.", "💿"],
-                        ["", "Third Man Records London", "Glazbena trgovina.", "🎵"],
-                        ["", "Hamleys", "Pogledati Bburago, F1 i eventualno Alfu.", "🚗"],
-                        ["", "TK Maxx Charing Cross Road", "Ako se naleti na zanimljiv model – bonus.", "🚗"]
-                    ]
-                }
+            title: "🎯 GLAVNO",
+            places: [
+                ["15:20", "Heathrow Airport", "Dolazak u London.", "✈️"],
+                ["poslijepodne", "Odlazak prema Londonu", "Smještaj kod bratića i odmor.", "🏠"]
             ]
         },
+        {
+            title: "☕ AKO BUDE VOLJE",
+            places: [
+                ["večer", "Kratka šetnja / večera", "Neobavezno, nakon puta.", "🍽️"]
+            ]
+        }
+    ]
+},
 
         {
             date: "Subota • 10.10.",
