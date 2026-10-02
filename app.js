@@ -960,43 +960,63 @@ function showStores() {
 
     const sections = [
         {
-            title: "💿 PLOČE",
-            subtitle: "Gdje tražiti vinile",
+            title: "🟢 CAMDEN",
+            subtitle: "Ako smo već ovdje...",
             places: [
-                ["", "Sister Ray", "Soho • Berwick Street", "💿"],
-                ["", "Reckless Records", "Soho • Berwick Street", "💿"],
-                ["", "Third Man Records", "Soho • Marshall Street", "💿"],
-                ["", "Phonica Records", "Soho • Poland Street", "💿"],
-                ["", "UMusic Shop Camden", "Camden • Stables Market", "💿"],
-                ["", "Honest Jon's", "Portobello • Portobello Road", "💿"],
-                ["", "Lion Records", "Portobello • Portobello Road", "💿"],
-                ["", "Firebird Records", "Portobello • Portobello Road", "💿"]
+                ["💿", "UMusic Shop", "Vinyl • glazba • merch • pokloni • Stables Market"],
+                ["💿", "Moon Jelly Records", "Vinyl • Stables Market"],
+                ["💿", "Kozmic Records", "Vinyl • Hawley Wharf"],
+                ["🚗", "TK Maxx", "Ako naletimo na povoljne modele • Bburago / F1"],
+                ["🎁", "Camden Market", "Štandovi • sitnice • neobični pokloni"]
             ]
         },
-
         {
-            title: "🚗 AUTIĆI",
-            subtitle: "Modeli • 1:43 • F1",
+            title: "🔵 NOTTING HILL / PORTOBELLO",
+            subtitle: "Ako smo već na Portobello Roadu...",
             places: [
-                ["", "TK Maxx", "Camden • Camden High Street • pogledati povoljne modele", "🚗"],
-                ["", "Hamleys", "King's Cross / St Pancras • pogledati ako smo već tamo", "🚗"],
-                ["", "Hamleys", "Soho • Regent Street • pogledati ako smo već u blizini", "🚗"],
-                ["", "Andy Morant Toys", "Portobello • vintage/die-cast • samo ako cijena ima smisla", "🚗"],
-                ["", "Portobello Road Market", "Notting Hill • štandovi i second-hand modeli", "🚗"]
+                ["💿", "Honest Jon's", "278 Portobello Road • vinyl"],
+                ["🚗", "Portobello Road Market", "Second-hand modeli • štandovi • vintage"],
+                ["🎁", "Portobello Market", "Antikviteti • vintage • neobične sitnice"]
             ]
         },
-
         {
-            title: "🎁 POKLONI",
-            subtitle: "Sestra • nećakinja • klinac • Jadranka",
+            title: "🟣 SOHO / CHINATOWN",
+            subtitle: "Ako smo već u centru...",
             places: [
-                ["", "98 Types Studio", "Camden • mali filmski/glazbeni printevi i pokloni", "🎬"],
-                ["", "Benjamin Pollock's Toyshop", "Covent Garden • tradicionalne igračke i neobične sitnice", "🧸"],
-                ["", "The Moomin Shop", "Covent Garden • pokloni i sitnice", "🎁"],
-                ["", "London Transport Museum Shop", "Covent Garden • londonski dizajn i pokloni", "🎁"],
-                ["", "ARTBOX", "Covent Garden • sitni pokloni i kolekcionarske stvari", "🎁"],
-                ["", "Hamleys", "Soho • Regent Street • igračke i pokloni", "🎁"],
-                ["", "House of MinaLima", "Soho • Harry Potter / grafički dizajn / printevi", "🎨"]
+                ["💿", "Sister Ray", "75 Berwick Street • novi i rabljeni vinyl"],
+                ["💿", "Reckless Records", "30 Berwick Street • rabljeni vinyl"],
+                ["💿", "Phonica Records", "51 Poland Street • elektronika / dance"],
+                ["💿", "Sounds of the Universe", "7 Broadwick Street • soul • reggae • funk"],
+                ["💿", "Third Man Records", "1 Marshall Street • vinyl • merch"],
+                ["🚗", "Hamleys", "Regent Street • pogledati povoljne modele"],
+                ["🎁", "House of MinaLima", "Grafički dizajn • printevi • Harry Potter"]
+            ]
+        },
+        {
+            title: "🟡 KING'S CROSS / COVENT GARDEN",
+            subtitle: "Ako smo već u ovom dijelu grada...",
+            places: [
+                ["🚗", "Hamleys", "Ako smo već u blizini • modeli i F1"],
+                ["🎁", "Benjamin Pollock's Toyshop", "Tradicionalne i neobične igračke"],
+                ["🎁", "London Transport Museum Shop", "London • dizajn • pokloni"],
+                ["🎁", "The Moomin Shop", "Sitni pokloni • kolekcionarske stvari"]
+            ]
+        },
+        {
+            title: "🔴 CITY / TOWER",
+            subtitle: "Ako smo već na Toweru...",
+            places: [
+                ["🎁", "Leadenhall Market", "Trgovine • hrana • zanimljiva arhitektura"],
+                ["🎁", "Tower / City", "Pogledati usput ako nešto zanimljivo naletimo"]
+            ]
+        },
+        {
+            title: "🌊 BRIGHTON",
+            subtitle: "Ako smo već na izletu...",
+            places: [
+                ["💿", "Rarekind Records", "Vinyl • The Lanes"],
+                ["🎁", "Snoopers Paradise", "Vintage • pokloni • neobične stvari"],
+                ["🚗", "North Laine", "Second-hand • vintage • ako naletimo na modele"]
             ]
         }
     ];
@@ -1005,11 +1025,11 @@ function showStores() {
         <div class="page-header">
             <button class="back-button" onclick="showHome()">← Početna</button>
             <h2>🏪 Trgovine</h2>
-            <p>Ploče • Autići • Pokloni</p>
+            <p>Nije plan obilaska — samo mjesta koja vrijedi imati na radaru.</p>
         </div>
     `;
 
-    sections.forEach((section, sectionIndex) => {
+    sections.forEach((section) => {
 
         html += `
             <section class="day-card">
@@ -1019,35 +1039,21 @@ function showStores() {
                         <span class="day-date">${section.subtitle}</span>
                         <h3>${section.title}</h3>
                     </div>
-
-                    <span class="day-number">${sectionIndex + 1}</span>
                 </div>
 
                 <div class="places">
         `;
 
-        section.places.forEach((place, placeIndex) => {
-
-            const id = `store-${sectionIndex}-place-${placeIndex}`;
-            const checked = localStorage.getItem(id) === "true";
+        section.places.forEach((place) => {
 
             html += `
-                <div class="place ${checked ? "visited" : ""}">
+                <div class="place">
 
-                    <button
-                        class="check-button"
-                        onclick="toggleVisited('${id}', this)">
-                        ${checked ? "✓" : "○"}
-                    </button>
-
-                    <div class="place-icon">${place[3]}</div>
+                    <div class="place-icon">${place[0]}</div>
 
                     <div class="place-info">
-
                         <strong>${place[1]}</strong>
-
                         <p>${place[2]}</p>
-
                     </div>
 
                     <button
